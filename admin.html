@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ZagaPrime — Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--espresso:#1A0F0A;--terra:#C4622D;--cream:#F5E6D3;--cream-dim:#C9B89E;--gold:#D4A017;--dark:#2C1810;--card:#1E0E09;--border:#3A1F14;--white:#fff;--gray:#6B6B6B;--green:#81c784;--red:#ef9a9a;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--espresso);color:var(--cream);font-family:'DM Sans',sans-serif;min-height:100vh}
+#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
+.login-box{background:var(--card);border:1px solid var(--border);padding:2.5rem;width:100%;max-width:380px;text-align:center}
+.login-box h1{font-size:1.3rem;color:var(--white);margin-bottom:.25rem}
+.login-box p{font-size:.85rem;color:var(--cream-dim);margin-bottom:1.5rem}
+.login-box input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--cream);padding:.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:.95rem;outline:none;margin-bottom:1rem}
+.login-box input:focus{border-color:var(--terra)}
+.btn{background:var(--terra);color:#fff;padding:.75rem 2rem;border:none;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;width:100%;transition:background .2s}
+.btn:hover{background:#D97340}
+.btn-sm{background:transparent;border:1px solid var(--border);color:var(--cream-dim);padding:.4rem .85rem;font-family:'DM Sans',sans-serif;font-size:.8rem;cursor:pointer;transition:all .2s}
+.btn-sm:hover{border-color:var(--terra);color:var(--terra)}
+.btn-gold{background:var(--gold);color:var(--espresso);padding:.5rem 1rem;border:none;font-weight:700;font-size:.8rem;cursor:pointer;font-family:'DM Sans',sans-serif}
+#app{display:none}
+header{background:var(--card);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1rem;font-weight:700;color:var(--terra)}
+.logo span{color:var(--cream)}
+.header-actions{display:flex;gap:.75rem;align-items:center}
+.last-refresh{font-size:.75rem;color:var(--gray)}
+main{padding:2rem;max-width:1300px;margin:0 auto}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem}
+.stat-card{background:var(--card);border:1px solid var(--border);padding:1.25rem}
+.stat-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:.4rem}
+.stat-value{font-size:2.2rem;font-weight:700;color:var(--white);line-height:1;font-family:'DM Mono',monospace}
+.stat-sub{font-size:.75rem;color:var(--gray);margin-top:.25rem}
+.stat-card.highlight{border-color:var(--terra)}
+.stat-card.highlight .stat-value{color:var(--terra)}
+.stat-card.gold{border-color:var(--gold)}
+.stat-card.gold .stat-value{color:var(--gold)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.panel{background:var(--card);border:1px solid var(--border);padding:1.5rem}
+.panel-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
+.chart-bars{display:flex;flex-direction:column;gap:.4rem}
+.bar-row{display:flex;align-items:center;gap:.75rem}
+.bar-label{font-size:.8rem;color:var(--cream-dim);min-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{flex:1;background:rgba(255,255,255,.05);height:14px;border-radius:1px;overflow:hidden}
+.bar-fill{height:100%;background:var(--terra);border-radius:1px;transition:width .8s ease}
+.bar-fill.gold{background:var(--gold)}
+.bar-fill.green{background:var(--green)}
+.bar-count{font-size:.75rem;font-family:'DM Mono',monospace;color:var(--cream-dim);min-width:28px;text-align:right}
+/* Bookings table */
+.bookings-panel{margin-bottom:2rem}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead tr{background:var(--espresso);border-bottom:2px solid var(--terra)}
+th{padding:.65rem .85rem;text-align:left;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr:hover{background:rgba(196,98,45,.05)}
+td{padding:.65rem .85rem;vertical-align:top;color:var(--cream-dim)}
+td.name{color:var(--cream);font-weight:600}
+td.email a{color:var(--terra);text-decoration:none}
+.status-badge{display:inline-block;padding:.2rem .6rem;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:1px}
+.status-new{background:rgba(212,160,23,.15);color:var(--gold);border:1px solid rgba(212,160,23,.3)}
+.status-contacted{background:rgba(21,101,192,.15);color:#90caf9;border:1px solid rgba(21,101,192,.3)}
+.status-booked{background:rgba(46,125,50,.15);color:var(--green);border:1px solid rgba(46,125,50,.3)}
+.commitment-high{color:var(--terra);font-weight:600}
+.commitment-mid{color:var(--gold)}
+.commitment-low{color:var(--gray)}
+.day-chart{display:flex;align-items:flex-end;gap:3px;height:80px;margin-top:.5rem}
+.day-bar{flex:1;background:var(--terra);border-radius:1px 1px 0 0;min-width:6px;transition:height .6s ease;cursor:default;position:relative}
+.day-bar:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--dark);border:1px solid var(--border);padding:.25rem .5rem;font-size:.7rem;white-space:nowrap;color:var(--cream);z-index:10;pointer-events:none}
+.empty{color:var(--gray);font-style:italic;font-size:.875rem;padding:1rem 0;text-align:center}
+.filters{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.filter-btn{background:transparent;border:1px solid var(--border);color:var(--cream-dim);padding:.35rem .85rem;font-size:.8rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{border-color:var(--terra);color:var(--terra)}
+.detail-cell{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.loading{text-align:center;padding:3rem;color:var(--gray)}
+.error-msg{background:rgba(183,28,28,.1);border:1px solid rgba(183,28,28,.3);padding:1rem;color:var(--red);margin-bottom:1rem;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <h1>ZagaPrime Admin</h1>
+    <p>Workshop Analytics & Booking Manager</p>
+    <input type="password" id="admin-key" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')login()"/>
+    <button class="btn" onclick="login()">Access Dashboard</button>
+    <p id="login-error" style="color:var(--red);font-size:.8rem;margin-top:.75rem;display:none">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="app">
+  <header>
+    <div class="logo">ZagaPrime <span>Admin</span></div>
+    <div class="header-actions">
+      <span class="last-refresh" id="last-refresh"></span>
+      <button class="btn-sm" onclick="loadData()">↻ Refresh</button>
+      <button class="btn-sm" onclick="exportCSV()">↓ Export CSV</button>
+      <button class="btn-sm" onclick="logout()">Sign Out</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="error-box" class="error-msg" style="display:none"></div>
+    <div id="loading" class="loading">Loading dashboard data...</div>
+    <div id="dashboard" style="display:none">
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat-card highlight">
+          <div class="stat-label">Total Bookings</div>
+          <div class="stat-value" id="s-bookings">—</div>
+          <div class="stat-sub">Discovery call requests</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Page Views</div>
+          <div class="stat-value" id="s-views">—</div>
+          <div class="stat-sub">Total tracked visits</div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-label">Niche Generator</div>
+          <div class="stat-value" id="s-niches">—</div>
+          <div class="stat-sub">AI sessions run</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Conversion Rate</div>
+          <div class="stat-value" id="s-rate">—</div>
+          <div class="stat-sub">Views → Bookings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">All In 🔥</div>
+          <div class="stat-value" id="s-hot">—</div>
+          <div class="stat-sub">High-commitment leads</div>
+        </div>
+      </div>
+
+      <!-- CHARTS ROW -->
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-title">Daily Activity (Last 14 Days)</div>
+          <div class="day-chart" id="day-chart"></div>
+          <div style="font-size:.7rem;color:var(--gray);margin-top:.4rem">Page views per day</div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Pages by Traffic</div>
+          <div class="chart-bars" id="page-bars"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-title">Commitment Breakdown</div>
+          <div class="chart-bars" id="commitment-bars"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">How They Found ZagaPrime</div>
+          <div class="chart-bars gold" id="source-bars"></div>
+        </div>
+      </div>
+
+      <!-- BOOKINGS TABLE -->
+      <div class="panel bookings-panel">
+        <div class="panel-title">All Discovery Call Requests</div>
+        <div class="filters">
+          <button class="filter-btn active" onclick="filterBookings('all',this)">All</button>
+          <button class="filter-btn" onclick="filterBookings('new',this)">New</button>
+          <button class="filter-btn" onclick="filterBookings('contacted',this)">Contacted</button>
+          <button class="filter-btn" onclick="filterBookings('booked',this)">Booked</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Commitment</th>
+                <th>Situation</th>
+                <th>Goal</th>
+                <th>AI Needs</th>
+                <th>Timing</th>
+                <th>Source</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- /dashboard -->
+  </main>
+</div>
+
+<script>
+let adminKey = '';
+let allBookings = [];
+let allStats = {};
+
+function login(){
+  const val = document.getElementById('admin-key').value;
+  if (!val) return;
+  adminKey = val;
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  loadData();
+}
+
+function logout(){
+  adminKey = '';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('admin-key').value = '';
+}
+
+async function loadData(){
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('error-box').style.display = 'none';
+
+  try {
+    const res = await fetch('/api/admin', {
+      headers: { 'x-admin-key': adminKey }
+    });
+    if (res.status === 401) {
+      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('app').style.display = 'none';
+      document.getElementById('login-error').style.display = 'block';
+      return;
+    }
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    allBookings = data.bookings || [];
+    allStats = data.stats || {};
+
+    renderStats();
+    renderCharts();
+    renderBookings('all');
+
+    document.getElementById('last-refresh').textContent = 'Refreshed ' + new Date().toLocaleTimeString();
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+  } catch(e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-box').textContent = 'Error loading data: ' + e.message;
+    document.getElementById('error-box').style.display = 'block';
+    document.getElementById('dashboard').style.display = 'block';
+  }
+}
+
+function renderStats(){
+  const s = allStats;
+  document.getElementById('s-bookings').textContent = s.total_bookings || 0;
+  document.getElementById('s-views').textContent = s.total_views || 0;
+  document.getElementById('s-niches').textContent = s.niche_gen_uses || 0;
+  const rate = s.total_views > 0 ? ((s.total_bookings / s.total_views) * 100).toFixed(1) + '%' : '—';
+  document.getElementById('s-rate').textContent = rate;
+  const hot = (s.commitment_breakdown || {})['All in — I am committed to applying everything'] || 0;
+  document.getElementById('s-hot').textContent = hot;
+}
+
+function renderCharts(){
+  const s = allStats;
+
+  // Day chart (last 14 days)
+  const dayChart = document.getElementById('day-chart');
+  dayChart.innerHTML = '';
+  const today = new Date();
+  const days = Array.from({length:14},(_,i)=>{
+    const d = new Date(today); d.setDate(d.getDate()-13+i);
+    return d.toISOString().slice(0,10);
+  });
+  const viewsByDay = s.views_by_day || {};
+  const maxDay = Math.max(1, ...days.map(d=>viewsByDay[d]||0));
+  days.forEach(day=>{
+    const count = viewsByDay[day] || 0;
+    const pct = (count / maxDay) * 100;
+    const bar = document.createElement('div');
+    bar.className = 'day-bar';
+    bar.style.height = Math.max(4, pct) + '%';
+    bar.setAttribute('data-tip', day.slice(5) + ': ' + count + ' views');
+    bar.title = day + ': ' + count + ' views';
+    dayChart.appendChild(bar);
+  });
+
+  // Page bars
+  renderBars('page-bars', s.views_by_page || {}, 'terra');
+  // Commitment bars
+  renderBars('commitment-bars', s.commitment_breakdown || {}, 'green');
+  // Source bars
+  renderBars('source-bars', s.source_breakdown || {}, 'gold');
+}
+
+function renderBars(id, obj, color){
+  const el = document.getElementById(id);
+  el.innerHTML = '';
+  const sorted = Object.entries(obj).sort((a,b)=>b[1]-a[1]);
+  if (!sorted.length) { el.innerHTML = '<p class="empty">No data yet</p>'; return; }
+  const max = sorted[0][1];
+  sorted.forEach(([label, count])=>{
+    const pct = (count/max)*100;
+    el.innerHTML += `<div class="bar-row">
+      <div class="bar-label" title="${label}">${label}</div>
+      <div class="bar-track"><div class="bar-fill ${color}" style="width:${pct}%"></div></div>
+      <div class="bar-count">${count}</div>
+    </div>`;
+  });
+}
+
+function filterBookings(status, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBookings(status);
+}
+
+function renderBookings(filter){
+  const tbody = document.getElementById('bookings-tbody');
+  const list = filter === 'all' ? allBookings : allBookings.filter(b=>b.status===filter);
+  if (!list.length) {
+    tbody.innerHTML = '<tr><td colspan="11" class="empty">No bookings yet</td></tr>';
+    return;
+  }
+  tbody.innerHTML = list.map(b=>{
+    const date = b.created_at ? new Date(b.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'2-digit'}) : '—';
+    const needs = Array.isArray(b.ai_needs) ? b.ai_needs.slice(0,2).join(', ')+(b.ai_needs.length>2?'…':'') : '—';
+    const commitClass = b.commitment?.includes('All in') ? 'commitment-high' : b.commitment?.includes('Ready') ? 'commitment-mid' : 'commitment-low';
+    return `<tr>
+      <td style="white-space:nowrap;font-size:.8rem">${date}</td>
+      <td class="name">${b.first_name} ${b.last_name}</td>
+      <td><a href="mailto:${b.email}">${b.email}</a></td>
+      <td>${b.phone || '—'}</td>
+      <td class="${commitClass}" style="font-size:.8rem">${b.commitment?.split('—')[0]?.trim() || '—'}</td>
+      <td class="detail-cell" title="${b.situation||''}">${b.situation||'—'}</td>
+      <td class="detail-cell" title="${b.goal||''}">${b.goal||'—'}</td>
+      <td class="detail-cell" title="${needs}">${needs}</td>
+      <td style="font-size:.8rem">${b.preferred_timing||'—'}</td>
+      <td style="font-size:.8rem">${b.source||'—'}</td>
+      <td><span class="status-badge status-${b.status||'new'}">${b.status||'new'}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function exportCSV(){
+  if (!allBookings.length) { alert('No bookings to export.'); return; }
+  const cols = ['Date','First Name','Last Name','Email','Phone','Situation','Business','Challenge','AI Needs','Goal','Commitment','Timing','Source','Notes','Status'];
+  const rows = allBookings.map(b=>[
+    b.created_at?.slice(0,10), b.first_name, b.last_name, b.email, b.phone||'',
+    b.situation||'', b.business_description||'', b.challenge||'',
+    (b.ai_needs||[]).join('; '), b.goal||'', b.commitment||'',
+    b.preferred_timing||'', b.source||'', b.notes||'', b.status||'new'
+  ].map(v=>`"${String(v).replace(/"/g,'""')}"`).join(','));
+  const csv = [cols.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='zagaprime_bookings_'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click(); URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

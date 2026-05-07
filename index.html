@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ZagaPrime AI Power Workshop — Book Your Discovery Call</title>
+<meta name="description" content="3 hands-on sessions. AI avatars, content creation, digital products & passive income. Stop watching. Start building."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --espresso:#1A0F0A; --terra:#C4622D; --terra-light:#D97340;
+  --cream:#F5E6D3; --cream-dim:#C9B89E; --gold:#D4A017; --gold-dim:#B8860B;
+  --dark:#2C1810; --card:#231510; --border:#3A1F14;
+  --green:#2E7D32; --blue:#1565C0;
+  --ff-display:'Playfair Display',serif; --ff-body:'DM Sans',sans-serif; --ff-mono:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--espresso);color:var(--cream);font-family:var(--ff-body);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--terra);color:#fff}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(26,15,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--ff-display);font-size:1.2rem;color:var(--terra);letter-spacing:0.05em;text-decoration:none}
+.nav-logo span{color:var(--cream)}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{color:var(--cream-dim);text-decoration:none;font-size:0.875rem;transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{background:var(--terra);color:#fff;padding:.6rem 1.4rem;border-radius:2px;text-decoration:none;font-size:0.875rem;font-weight:600;letter-spacing:0.05em;transition:background .2s}
+.nav-cta:hover{background:var(--terra-light)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 30%,rgba(196,98,45,0.12) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.4;pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);padding:.4rem 1rem;border-radius:2px;margin-bottom:1.5rem}
+.hero-eyebrow span{font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+.hero-eyebrow .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+h1{font-family:var(--ff-display);font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;color:#fff;margin-bottom:1.2rem;max-width:900px}
+h1 em{font-style:normal;color:var(--terra)}
+.hero-sub{font-size:1.15rem;color:var(--cream-dim);max-width:600px;margin-bottom:2rem;font-weight:300;line-height:1.7}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{background:var(--terra);color:#fff;padding:.85rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:.04em;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--terra-light);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--cream);padding:.85rem 2rem;border-radius:2px;text-decoration:none;font-weight:500;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--terra);color:var(--terra)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.stat{border-left:2px solid var(--terra);padding-left:1rem}
+.stat-num{font-family:var(--ff-display);font-size:2rem;color:var(--cream);line-height:1}
+.stat-label{font-size:.8rem;color:var(--cream-dim);margin-top:.2rem}
+
+/* TICKER */
+.ticker{background:var(--terra);padding:.6rem 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;animation:tick 25s linear infinite}
+.ticker-item{padding:0 2rem;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;opacity:.9}
+.ticker-dot{opacity:.5}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:.75rem}
+h2{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.15;margin-bottom:1rem}
+h2 em{font-style:normal;color:var(--terra)}
+.lead{font-size:1.1rem;color:var(--cream-dim);max-width:640px;line-height:1.75;margin-bottom:2rem}
+
+/* WHO IT'S FOR */
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2.5rem}
+.who-card{background:var(--card);padding:1.75rem;display:flex;flex-direction:column;gap:.75rem;transition:background .2s}
+.who-card:hover{background:#2C1810}
+.who-icon{font-size:1.75rem}
+.who-title{font-weight:600;color:var(--cream);font-size:.95rem}
+.who-desc{font-size:.875rem;color:var(--cream-dim);line-height:1.6}
+
+/* OUTCOMES */
+.outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.outcome-item{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:2px}
+.outcome-icon{flex-shrink:0;width:36px;height:36px;background:rgba(196,98,45,.15);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.outcome-text{font-size:.9rem;color:var(--cream-dim);line-height:1.5}
+.outcome-text strong{color:var(--cream);display:block;margin-bottom:.2rem;font-size:.95rem}
+
+/* CURRICULUM */
+.curriculum-section{background:var(--dark)}
+.sessions{display:flex;flex-direction:column;gap:1.5rem;margin-top:2.5rem}
+.session-card{border:1px solid var(--border);background:var(--card);overflow:hidden;cursor:pointer;transition:border-color .2s}
+.session-card:hover{border-color:var(--terra)}
+.session-card.open{border-color:var(--terra)}
+.session-header{display:flex;align-items:center;gap:1.5rem;padding:1.5rem 2rem}
+.session-num{font-family:var(--ff-display);font-size:3rem;color:rgba(196,98,45,.2);line-height:1;min-width:60px;font-weight:900}
+.session-card.open .session-num{color:var(--terra)}
+.session-info{flex:1}
+.session-badge{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem}
+.session-card.open .session-badge,.session-card:nth-child(2) .session-badge,.session-card:nth-child(3) .session-badge{color:var(--gold)}
+.session-title{font-family:var(--ff-display);font-size:1.3rem;color:#fff}
+.session-toggle{color:var(--cream-dim);font-size:1.2rem;transition:transform .3s}
+.session-card.open .session-toggle{transform:rotate(45deg);color:var(--terra)}
+.session-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.session-card.open .session-body{max-height:600px}
+.session-content{padding:0 2rem 2rem;border-top:1px solid var(--border)}
+.session-topics{list-style:none;margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.session-topics li{display:flex;gap:.6rem;align-items:flex-start;font-size:.875rem;color:var(--cream-dim)}
+.session-topics li::before{content:'→';color:var(--terra);flex-shrink:0;margin-top:.05rem}
+.hot-pill{display:inline-flex;align-items:center;gap:.3rem;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);padding:.25rem .7rem;border-radius:2px;font-size:.7rem;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:.75rem}
+.session-exercise{margin-top:1rem;padding:1rem;background:rgba(196,98,45,.08);border-left:2px solid var(--terra)}
+.session-exercise p{font-size:.875rem;color:var(--cream-dim);font-style:italic}
+.session-exercise strong{color:var(--terra);font-style:normal}
+
+/* PREPARE */
+.prepare-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+.prepare-block{background:var(--card);border:1px solid var(--border);padding:2rem}
+.prepare-block h3{font-family:var(--ff-display);font-size:1.2rem;color:#fff;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.check-list li{display:flex;gap:.75rem;align-items:flex-start;font-size:.9rem;color:var(--cream-dim)}
+.check-list li span.check{flex-shrink:0;width:20px;height:20px;background:rgba(196,98,45,.2);border:1px solid var(--terra);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--terra);margin-top:.1rem}
+.tool-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.tool-chip{background:rgba(196,98,45,.08);border:1px solid var(--border);padding:.35rem .85rem;border-radius:2px;font-size:.8rem;color:var(--cream-dim);font-family:var(--ff-mono)}
+.tool-chip a{color:var(--cream-dim);text-decoration:none}
+.tool-chip a:hover{color:var(--terra)}
+.mindset-box{grid-column:1/-1;background:linear-gradient(135deg,rgba(196,98,45,.1),rgba(44,24,16,.5));border:1px solid rgba(196,98,45,.3);padding:2rem;display:flex;gap:2rem;align-items:center}
+.mindset-icon{font-size:3rem;flex-shrink:0}
+.mindset-text h3{font-family:var(--ff-display);font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+.mindset-text p{font-size:.9rem;color:var(--cream-dim);line-height:1.7}
+
+/* NICHE GENERATOR */
+.generator-section{background:linear-gradient(180deg,var(--espresso) 0%,#200D07 100%);position:relative}
+.generator-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.gen-box{background:var(--card);border:1px solid var(--border);padding:2.5rem;margin-top:2rem;position:relative;overflow:hidden}
+.gen-box::before{content:'AI';position:absolute;top:-1rem;right:1.5rem;font-family:var(--ff-display);font-size:8rem;color:rgba(196,98,45,.04);font-weight:900;line-height:1;pointer-events:none}
+.gen-intro{font-size:1rem;color:var(--cream-dim);margin-bottom:2rem;max-width:640px;line-height:1.7}
+.gen-form{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.field{display:flex;flex-direction:column;gap:.5rem}
+.field.full{grid-column:1/-1}
+label{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim)}
+input,textarea,select{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--cream);padding:.75rem 1rem;font-family:var(--ff-body);font-size:.95rem;width:100%;outline:none;transition:border-color .2s;border-radius:1px}
+input:focus,textarea:focus,select:focus{border-color:var(--terra)}
+textarea{resize:vertical;min-height:80px}
+select option{background:var(--dark);color:var(--cream)}
+.gen-submit{grid-column:1/-1;display:flex;gap:1rem;align-items:center;margin-top:.5rem}
+#gen-btn{background:var(--gold);color:var(--espresso);padding:.85rem 2rem;border:none;font-family:var(--ff-body);font-weight:700;font-size:.95rem;cursor:pointer;letter-spacing:.04em;display:flex;align-items:center;gap:.5rem;transition:all .2s}
+#gen-btn:hover:not(:disabled){background:#e5b020;transform:translateY(-1px)}
+#gen-btn:disabled{opacity:.6;cursor:not-allowed}
+.gen-hint{font-size:.8rem;color:var(--cream-dim);font-style:italic}
+
+/* NICHE RESULTS */
+#gen-results{margin-top:2.5rem;display:none}
+#gen-results.visible{display:block}
+.niche-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:1rem}
+.niche-card{background:var(--espresso);border:1px solid var(--border);padding:1.75rem;position:relative;overflow:hidden;animation:fadeUp .5s ease forwards;opacity:0}
+.niche-card:nth-child(1){animation-delay:.1s}
+.niche-card:nth-child(2){animation-delay:.25s}
+.niche-card:nth-child(3){animation-delay:.4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.niche-num{font-family:var(--ff-display);font-size:4rem;color:rgba(196,98,45,.15);position:absolute;top:-.5rem;right:1rem;font-weight:900;line-height:1}
+.niche-name{font-family:var(--ff-display);font-size:1.2rem;color:#fff;margin-bottom:.25rem;position:relative}
+.niche-tagline{font-size:.85rem;color:var(--terra);margin-bottom:1rem;font-style:italic;position:relative}
+.niche-section{margin-top:.75rem}
+.niche-section-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:.35rem}
+.niche-section p{font-size:.875rem;color:var(--cream-dim);line-height:1.6}
+.niche-products{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.niche-products li{font-size:.85rem;color:var(--cream-dim);display:flex;gap:.5rem;align-items:flex-start}
+.niche-products li::before{content:'$';color:var(--gold);font-size:.75rem;margin-top:.1rem;flex-shrink:0}
+.pillars-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.3rem}
+.pillar-tag{background:rgba(196,98,45,.1);border:1px solid rgba(196,98,45,.2);padding:.2rem .6rem;font-size:.75rem;color:var(--terra);border-radius:1px}
+.gen-loading{display:none;padding:2rem;text-align:center;color:var(--cream-dim)}
+.gen-loading.visible{display:block}
+.spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--terra);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gen-error{background:rgba(183,28,28,.1);border:1px solid rgba(183,28,28,.3);padding:1rem;color:#ef9a9a;font-size:.9rem;margin-top:1rem;display:none}
+.gen-error.visible{display:block}
+
+/* DISCOVERY FORM */
+.discovery-section{background:var(--dark)}
+.discovery-section::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,var(--terra),transparent);margin-bottom:0}
+.form-container{max-width:760px;margin:2.5rem auto 0}
+.form-steps{display:flex;gap:.5rem;margin-bottom:2.5rem}
+.step-dot{flex:1;height:3px;background:var(--border);border-radius:2px;transition:background .3s}
+.step-dot.active{background:var(--terra)}
+.step-dot.done{background:var(--terra-light)}
+.form-step{display:none}
+.form-step.active{display:block;animation:fadeUp .3s ease}
+.step-label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:.4rem}
+.step-title{font-family:var(--ff-display);font-size:1.6rem;color:#fff;margin-bottom:.5rem}
+.step-desc{font-size:.9rem;color:var(--cream-dim);margin-bottom:1.75rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.check-group{display:flex;flex-direction:column;gap:.6rem;margin-top:.25rem}
+.check-option{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);cursor:pointer;transition:border-color .2s}
+.check-option:hover{border-color:var(--terra)}
+.check-option input{accent-color:var(--terra)}
+.check-option label{font-size:.9rem;color:var(--cream-dim);cursor:pointer}
+.radio-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin-top:.25rem}
+.radio-card{padding:1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);cursor:pointer;text-align:center;transition:all .2s}
+.radio-card:hover,.radio-card.selected{border-color:var(--terra);background:rgba(196,98,45,.08)}
+.radio-card input{display:none}
+.radio-card-icon{font-size:1.5rem;margin-bottom:.4rem}
+.radio-card-label{font-size:.85rem;color:var(--cream-dim);line-height:1.4}
+.radio-card.selected .radio-card-label{color:var(--cream)}
+.form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.btn-back{background:transparent;color:var(--cream-dim);border:1px solid var(--border);padding:.7rem 1.5rem;font-family:var(--ff-body);font-size:.9rem;cursor:pointer;transition:all .2s}
+.btn-back:hover{border-color:var(--cream-dim);color:var(--cream)}
+.progress-text{font-size:.8rem;color:var(--cream-dim)}
+.form-success{display:none;text-align:center;padding:3rem 2rem;animation:fadeUp .4s ease}
+.form-success.visible{display:block}
+.success-icon{font-size:3.5rem;margin-bottom:1rem}
+.success-title{font-family:var(--ff-display);font-size:2rem;color:#fff;margin-bottom:.75rem}
+.success-text{color:var(--cream-dim);font-size:1rem;line-height:1.7;max-width:480px;margin:0 auto 1.5rem}
+.success-next{display:flex;flex-direction:column;gap:.6rem;max-width:400px;margin:1.5rem auto 0;text-align:left}
+.success-next-item{display:flex;gap:.75rem;align-items:center;padding:.75rem 1rem;background:var(--card);border:1px solid var(--border);font-size:.875rem;color:var(--cream-dim)}
+.success-next-item span{color:var(--terra);font-weight:700;font-size:1.1rem;flex-shrink:0}
+
+/* DIVIDER */
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
+.footer-brand .logo{font-family:var(--ff-display);font-size:1.3rem;color:var(--terra);display:block;margin-bottom:.75rem}
+.footer-brand p{font-size:.875rem;color:var(--cream-dim);line-height:1.6;max-width:300px}
+.footer-col h4{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:.75rem}
+.footer-col a{display:block;color:var(--cream-dim);text-decoration:none;font-size:.875rem;margin-bottom:.4rem;transition:color .2s}
+.footer-col a:hover{color:var(--terra)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--cream-dim)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  h1{font-size:2.4rem}
+  .outcomes-grid,.prepare-grid,.gen-form,.form-grid,.radio-grid{grid-template-columns:1fr}
+  .session-topics{grid-template-columns:1fr}
+  .mindset-box{flex-direction:column;gap:1rem}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Zaga<span>Prime</span></a>
+  <div class="nav-links">
+    <a href="#program">Program</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#niche-gen">Find My Niche</a>
+    <a href="resources.html">Resources</a>
+    <a href="#discovery" class="nav-cta">Book Discovery Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="dot"></div>
+      <span>ZagaPrime AI Power Workshop Series</span>
+    </div>
+    <h1>Stop Watching.<br/>Start <em>Building.</em><br/>Your AI Era Starts Now.</h1>
+    <p class="hero-sub">3 hands-on sessions that turn your skill, niche, or idea into an AI-powered brand — with real content, a faceless avatar, and digital products that earn while you sleep.</p>
+    <div class="hero-ctas">
+      <a href="#discovery" class="btn-primary">🗓 Book Your Discovery Call</a>
+      <a href="#niche-gen" class="btn-secondary">✦ Find My Niche →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Hands-On Sessions</div></div>
+      <div class="stat"><div class="stat-num">2.5h</div><div class="stat-label">Per Session</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Max Participants</div></div>
+      <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Real Results</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">AI Content Creation</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">AI Avatar & Digital Twin</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">Faceless Content</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">30-Day Content Calendar</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">Digital Products & Passive Income</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">Business Automation</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">AI Brand Strategy</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">No-Code Automations</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">AI Content Creation</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">AI Avatar & Digital Twin</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">Faceless Content</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">30-Day Content Calendar</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">Digital Products & Passive Income</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">Business Automation</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">AI Brand Strategy</span><span class="ticker-dot">✦</span>
+    <span class="ticker-item">No-Code Automations</span><span class="ticker-dot">✦</span>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section id="program">
+  <div class="container">
+    <div class="section-label">Who This Is For</div>
+    <h2>Built for Builders,<br/>Not Bystanders.</h2>
+    <p class="lead">You don't need a tech background. You need a skill, an idea, or a business — and the commitment to actually use what you learn.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">💼</div>
+        <div class="who-title">The 9-to-5 Builder</div>
+        <div class="who-desc">You've got skills from your job that you want to package and monetize. AI is your shortcut to getting there faster.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🌱</div>
+        <div class="who-title">The New Entrepreneur</div>
+        <div class="who-desc">You've got an idea or niche but don't know how to create content, build a brand, or start making money from it.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">📱</div>
+        <div class="who-title">The Social Media Starter</div>
+        <div class="who-desc">You want to grow an audience but struggle with consistency, ideas, and time. AI solves all three simultaneously.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🚫</div>
+        <div class="who-title">The Camera-Shy Creator</div>
+        <div class="who-desc">You want to post video content without being on camera. AI avatars let you show up — without showing up.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">⚙️</div>
+        <div class="who-title">The Business Owner Ready to Scale</div>
+        <div class="who-desc">You run a business and spend too much time on tasks AI could handle in seconds. Let's automate and optimize.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">💤</div>
+        <div class="who-title">The Passive Income Seeker</div>
+        <div class="who-desc">You want income streams that work while you sleep. Digital products + AI is the fastest path there for most people.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- OUTCOMES -->
+<section>
+  <div class="container">
+    <div class="section-label">What You Walk Away With</div>
+    <h2>Real Skills.<br/>Real <em>Deliverables.</em></h2>
+    <p class="lead">Every session ends with something you built. Not notes. Not slides. Something usable.</p>
+    <div class="outcomes-grid">
+      <div class="outcome-item">
+        <div class="outcome-icon">✍️</div>
+        <div class="outcome-text"><strong>5+ Pieces of AI-Generated Content</strong>Captions, reel scripts, bios, and promo posts — made in your brand voice, ready to post.</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon">🤖</div>
+        <div class="outcome-text"><strong>Your AI Avatar or Digital Character</strong>A faceless AI presenter or consistent brand character. Content without a camera. Ever.</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon">📅</div>
+        <div class="outcome-text"><strong>A Full 30-Day Content Calendar</strong>AI-planned, brand-aligned, and ready to execute. No more staring at a blank screen.</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon">🛍️</div>
+        <div class="outcome-text"><strong>Your First Digital Product Outline</strong>A sellable product idea, table of contents, pricing, and a 7-day launch plan — all built with AI.</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon">⚡</div>
+        <div class="outcome-text"><strong>At Least One Business Automation</strong>A Zapier workflow saving you real hours every week. Set it once. Done forever.</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon">📦</div>
+        <div class="outcome-text"><strong>A Personal AI Toolkit & Workflow</strong>Curated tools, prompt templates, and a daily AI routine you can run starting tomorrow.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum-section" id="curriculum">
+  <div class="container">
+    <div class="section-label">The Curriculum</div>
+    <h2>Three Sessions.<br/>Zero <em>Fluff.</em></h2>
+    <p class="lead">Each session is 2.5–3 hours of live, hands-on training. Click each session to see exactly what's covered.</p>
+    <div class="sessions">
+
+      <div class="session-card" onclick="toggleSession(this)">
+        <div class="session-header">
+          <div class="session-num">01</div>
+          <div class="session-info">
+            <div class="session-badge">SESSION ONE</div>
+            <div class="session-title">AI Foundations & Social Media Content Creation</div>
+          </div>
+          <div class="session-toggle">+</div>
+        </div>
+        <div class="session-body">
+          <div class="session-content">
+            <ul class="session-topics">
+              <li>What AI actually is — plain language, zero jargon</li>
+              <li>Live tour of ChatGPT, Claude, and Canva AI</li>
+              <li>The 4-Part Prompt Formula that gets results every time</li>
+              <li>Creating Instagram captions that actually convert</li>
+              <li>Writing reel scripts, bios, and promo posts with AI</li>
+              <li>How to make AI sound exactly like YOUR brand voice</li>
+            </ul>
+            <div class="session-exercise">
+              <p><strong>🎯 You Leave With:</strong> 5 ready-to-post pieces of content made for YOUR brand. Plus your first custom prompt template.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-card" onclick="toggleSession(this)">
+        <div class="session-header">
+          <div class="session-num">02</div>
+          <div class="session-info">
+            <div class="session-badge">🔥 SESSION TWO — HOT TOPICS INSIDE</div>
+            <div class="session-title">Strategy, AI Avatars & Brand Growth</div>
+          </div>
+          <div class="session-toggle">+</div>
+        </div>
+        <div class="session-body">
+          <div class="session-content">
+            <div class="hot-pill">🔥 AI AVATAR & DIGITAL TWIN</div>
+            <ul class="session-topics">
+              <li>Build your brand strategy: niche, voice & content pillars</li>
+              <li>AI hashtag research + trend discovery</li>
+              <li>30-day content calendar in under 30 minutes</li>
+              <li>Repurpose 1 piece of content into 5 formats</li>
+              <li><strong style="color:var(--gold)">AI Avatar Setup</strong> — HeyGen, D-ID, Synthesia</li>
+              <li><strong style="color:var(--gold)">Voice Cloning</strong> — Your voice, no recording required</li>
+              <li><strong style="color:var(--gold)">Consistent AI Characters</strong> — Brand mascots with Midjourney</li>
+              <li>Complete faceless content creator workflow</li>
+            </ul>
+            <div class="session-exercise">
+              <p><strong>🎯 You Leave With:</strong> Your AI avatar live + a complete 30-day content calendar + your brand character (optional).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-card" onclick="toggleSession(this)">
+        <div class="session-header">
+          <div class="session-num">03</div>
+          <div class="session-info">
+            <div class="session-badge">🔥 SESSION THREE — PASSIVE INCOME INSIDE</div>
+            <div class="session-title">AI in Your Business — Productivity, Automation & Digital Income</div>
+          </div>
+          <div class="session-toggle">+</div>
+        </div>
+        <div class="session-body">
+          <div class="session-content">
+            <div class="hot-pill">🔥 DIGITAL PRODUCTS & PASSIVE INCOME</div>
+            <ul class="session-topics">
+              <li>AI-powered email, proposals & client communication</li>
+              <li>Business operations: research, planning, FAQs</li>
+              <li>Zapier automations — no code, set once, runs forever</li>
+              <li><strong style="color:var(--gold)">Identify your monetizable skills</strong> — the audit exercise</li>
+              <li><strong style="color:var(--gold)">7 digital product types</strong> — ebooks, templates, prompt packs, courses</li>
+              <li><strong style="color:var(--gold)">AI builds your product</strong> — outline, sales copy, pricing</li>
+              <li>Launch platforms: Gumroad, Payhip, Stan.store, Etsy</li>
+              <li>7-day digital product launch plan with AI</li>
+            </ul>
+            <div class="session-exercise">
+              <p><strong>🎯 You Leave With:</strong> Your first digital product outlined, priced, and ready to list. Plus one automation saving you hours weekly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--dark)">
+  <div class="container">
+    <div class="section-label">Investment</div>
+    <h2>Transparent Pricing.<br/><em>Real Value.</em></h2>
+    <p class="lead">Whether you're joining solo or bringing a group — the AI Power Workshop Series is priced to be accessible and worth every dollar you invest.</p>
+
+    <!-- PUBLIC PRICING CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem">
+
+      <!-- Individual -->
+      <div style="background:var(--card);border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:.5rem">Individual</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;margin-bottom:1rem">Single Session Access</div>
+        <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:.25rem">
+          <span style="font-family:'Playfair Display',serif;font-size:2.8rem;color:#fff;line-height:1">$200</span>
+          <span style="font-size:.85rem;color:var(--cream-dim)">/session</span>
+        </div>
+        <div style="font-size:.8rem;color:var(--cream-dim);margin-bottom:1.25rem">or $600 for the full 3-session series</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem">
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>Book 1, 2, or all 3 sessions</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>Session slide deck &amp; workbook</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>AI tools resource list</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>Certificate of completion</li>
+        </ul>
+        <a href="#discovery" style="display:block;text-align:center;background:transparent;color:var(--terra);border:1px solid var(--terra);padding:.75rem;font-weight:600;font-size:.9rem;text-decoration:none;letter-spacing:.04em;transition:all .2s" onmouseover="this.style.background='rgba(196,98,45,.1)'" onmouseout="this.style.background='transparent'">Book My Spot →</a>
+      </div>
+
+      <!-- Group - FEATURED -->
+      <div style="background:linear-gradient(180deg,rgba(196,98,45,.08),var(--card));border:1px solid var(--terra);padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;background:var(--terra);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.1em;padding:.4rem .85rem;text-transform:uppercase">Best Value</div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:.5rem">Group of 6+</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;margin-bottom:1rem">Private Group Series</div>
+        <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:.25rem">
+          <span style="font-family:'Playfair Display',serif;font-size:2.8rem;color:#fff;line-height:1">$150</span>
+          <span style="font-size:.85rem;color:var(--cream-dim)">/person/session</span>
+        </div>
+        <div style="font-size:.8rem;color:var(--cream-dim);margin-bottom:.4rem">$450/person for the full series</div>
+        <div style="background:rgba(196,98,45,.12);border:1px solid rgba(196,98,45,.25);padding:.5rem .75rem;margin-bottom:1.25rem;font-size:.85rem;color:var(--terra);font-weight:600">Group of 6 = <strong style="color:#fff">$2,700 total</strong> — $900 less than individual</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem">
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>Private group training (your cohort only)</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>All 3 sessions + full materials package</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>AI Avatar guide + Digital Product Kit</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>WhatsApp group support between sessions</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--terra)">✓</span>Certificate of completion</li>
+        </ul>
+        <a href="#discovery" style="display:block;text-align:center;background:var(--terra);color:#fff;padding:.85rem;font-weight:700;font-size:.95rem;text-decoration:none;letter-spacing:.04em;transition:background .2s" onmouseover="this.style.background='#D97340'" onmouseout="this.style.background='var(--terra)'">Book Group Discovery Call →</a>
+      </div>
+
+      <!-- Early Bird -->
+      <div style="background:linear-gradient(180deg,rgba(212,160,23,.08),var(--card));border:1px solid rgba(212,160,23,.4);padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;background:var(--gold);color:var(--espresso);font-size:.65rem;font-weight:800;letter-spacing:.1em;padding:.4rem .85rem;text-transform:uppercase">⚡ Limited</div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Reserve Now — Early Bird</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;margin-bottom:.75rem">Lock In Before June Launch</div>
+        <div style="display:flex;align-items:baseline;gap:.3rem;margin-bottom:.25rem">
+          <span style="font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--gold);line-height:1">$112</span>
+          <span style="font-size:.85rem;color:var(--cream-dim)">/person/session</span>
+        </div>
+        <div style="font-size:.8rem;color:var(--cream-dim);margin-bottom:.4rem">$336/person full series (3 sessions)</div>
+        <div style="background:rgba(27,94,32,.12);border:1px solid rgba(27,94,32,.3);padding:.5rem .75rem;margin-bottom:1.25rem;font-size:.85rem;color:#81c784;font-weight:600">Group of 6 = <strong style="color:#fff">$2,016 total</strong> — saves $1,584 vs. public rate</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem">
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--gold)">✓</span>Everything in the Group rate</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--gold)">✓</span>Dates secured before public launch</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--gold)">✓</span>50% deposit locks rate for all 3 sessions</li>
+          <li style="display:flex;gap:.6rem;font-size:.875rem;color:var(--cream-dim)"><span style="color:var(--gold)">✓</span>Rate cannot be guaranteed after June</li>
+        </ul>
+        <a href="#discovery" style="display:block;text-align:center;background:var(--gold);color:var(--espresso);padding:.85rem;font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.04em;transition:background .2s" onmouseover="this.style.background='#e5b020'" onmouseout="this.style.background='var(--gold)'">⚡ Reserve Early Bird Rate →</a>
+      </div>
+
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div style="margin-top:2rem;background:var(--espresso);border:1px solid var(--border);padding:0;overflow:hidden">
+      <div style="padding:1rem 1.5rem;background:var(--espresso);border-bottom:1px solid var(--border)">
+        <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra)">Quick Comparison — Group of 6</div>
+      </div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.875rem">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:.75rem 1.5rem;color:var(--cream-dim);font-weight:600;font-size:.8rem;border-bottom:1px solid var(--border);background:var(--card)">Rate</th>
+              <th style="text-align:center;padding:.75rem;color:var(--cream-dim);font-size:.8rem;border-bottom:1px solid var(--border);background:var(--card)">Per Session</th>
+              <th style="text-align:center;padding:.75rem;color:var(--cream-dim);font-size:.8rem;border-bottom:1px solid var(--border);background:var(--card)">Per Person<br/>Full Series</th>
+              <th style="text-align:center;padding:.75rem;color:var(--cream-dim);font-size:.8rem;border-bottom:1px solid var(--border);background:var(--card)">Group of 6<br/>Total</th>
+              <th style="text-align:center;padding:.75rem;color:var(--cream-dim);font-size:.8rem;border-bottom:1px solid var(--border);background:var(--card)">You Save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:rgba(255,255,255,.02)">
+              <td style="padding:.65rem 1.5rem;color:var(--cream-dim);border-bottom:1px solid var(--border)">Public Individual</td>
+              <td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$200</td>
+              <td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$600</td>
+              <td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$3,600</td>
+              <td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">—</td>
+            </tr>
+            <tr style="background:rgba(196,98,45,.05)">
+              <td style="padding:.65rem 1.5rem;color:var(--cream);font-weight:600;border-bottom:1px solid var(--border)">Private Group Rate</td>
+              <td style="padding:.65rem;text-align:center;color:var(--terra);font-weight:700;border-bottom:1px solid var(--border)">$150</td>
+              <td style="padding:.65rem;text-align:center;color:var(--terra);font-weight:700;border-bottom:1px solid var(--border)">$450</td>
+              <td style="padding:.65rem;text-align:center;color:var(--cream);font-weight:700;border-bottom:1px solid var(--border)">$2,700</td>
+              <td style="padding:.65rem;text-align:center;color:#81c784;font-weight:600;border-bottom:1px solid var(--border)">$900</td>
+            </tr>
+            <tr style="background:rgba(212,160,23,.06)">
+              <td style="padding:.75rem 1.5rem;color:var(--gold);font-weight:700">⚡ Early Bird (Reserve Now)</td>
+              <td style="padding:.75rem;text-align:center;color:var(--gold);font-weight:800;font-size:1.05rem">$112</td>
+              <td style="padding:.75rem;text-align:center;color:var(--gold);font-weight:800;font-size:1.05rem">$336</td>
+              <td style="padding:.75rem;text-align:center;color:#fff;font-weight:800;font-size:1.1rem">$2,016</td>
+              <td style="padding:.75rem;text-align:center;color:#81c784;font-weight:700;font-size:1rem">$1,584 💰</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:.8rem;color:var(--cream-dim);margin-top:.75rem;font-style:italic">Early bird rate is limited and available before the June public launch. 50% deposit required to lock in. Group pricing applies to 6+ participants.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PREPARE -->
+<section id="prepare">
+  <div class="container">
+    <div class="section-label">Come Prepared</div>
+    <h2>What You Need<br/>to <em>Show Up</em> With.</h2>
+    <p class="lead">This is a DO workshop. Not a watch-and-forget session. Come ready to build.</p>
+    <div class="prepare-grid">
+      <div class="prepare-block">
+        <h3>🖥️ What to Bring</h3>
+        <ul class="check-list">
+          <li><span class="check">✓</span>A laptop (strongly preferred) or tablet. A phone alone limits what you can do.</li>
+          <li><span class="check">✓</span>Stable internet connection — you'll be building live</li>
+          <li><span class="check">✓</span>Notebook or phone for notes</li>
+          <li><span class="check">✓</span>Your full attention — no multi-tasking in this room</li>
+          <li><span class="check">✓</span>Energy. We move fast, and it's worth it.</li>
+        </ul>
+      </div>
+      <div class="prepare-block">
+        <h3>📱 Free Accounts to Set Up First</h3>
+        <p style="font-size:.875rem;color:var(--cream-dim);margin-bottom:1rem">Set these up before Session 1. All free. No credit card needed.</p>
+        <div class="tool-chips">
+          <div class="tool-chip"><a href="https://chatgpt.com" target="_blank">ChatGPT</a></div>
+          <div class="tool-chip"><a href="https://claude.ai" target="_blank">Claude</a></div>
+          <div class="tool-chip"><a href="https://canva.com" target="_blank">Canva</a></div>
+          <div class="tool-chip"><a href="https://heygen.com" target="_blank">HeyGen</a></div>
+          <div class="tool-chip"><a href="https://d-id.com" target="_blank">D-ID</a></div>
+          <div class="tool-chip"><a href="https://zapier.com" target="_blank">Zapier</a></div>
+          <div class="tool-chip"><a href="https://gumroad.com" target="_blank">Gumroad</a></div>
+          <div class="tool-chip"><a href="https://elevenlabs.io" target="_blank">ElevenLabs</a></div>
+        </div>
+      </div>
+      <div class="mindset-box">
+        <div class="mindset-icon">🧠</div>
+        <div class="mindset-text">
+          <h3>Come With Something to Work On</h3>
+          <p>You need at least ONE of these: a business you run, a business idea, a skill you can teach, a social media account you want to grow, or knowledge from your 9-to-5 you could package. Don't have one yet? Use the Niche Generator below and come back with your answer. The workshop is designed to help you apply everything in real time — not just learn it in theory. <strong style="color:var(--cream)">The value is in the doing.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NICHE GENERATOR -->
+<section class="generator-section" id="niche-gen">
+  <div class="container">
+    <div class="section-label">AI Niche & Skill Generator</div>
+    <h2>Not Sure What<br/>Your <em>Niche</em> Is?</h2>
+    <p class="lead">Tell us about your background and interests. Our AI will identify your top niche opportunities, digital product ideas, and exactly how to get started — specific to you.</p>
+    <div class="gen-box">
+      <p class="gen-intro">Answer a few quick questions. The AI will generate 3 personalized niche ideas with digital product recommendations, content pillars, and a first action step for each.</p>
+      <div class="gen-form">
+        <div class="field">
+          <label>Your Professional Background / Skills</label>
+          <textarea id="gen-skills" placeholder="e.g. I'm a nurse with 8 years experience. I know scheduling, patient care, documentation, and managing stress in high-pressure environments." rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>Topics You Love or Help People With</label>
+          <textarea id="gen-interests" placeholder="e.g. I love helping new nurses navigate their first year, organizing meal prep, and sharing tips for work-life balance on night shifts." rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>Current Situation</label>
+          <select id="gen-situation">
+            <option value="">Select your situation...</option>
+            <option value="employed, want a side income">I have a job and want side income</option>
+            <option value="small business owner wanting to grow with AI">I have a small business I want to grow</option>
+            <option value="starting completely fresh, no idea yet">I'm starting from scratch</option>
+            <option value="creator wanting to monetize their content">I create content and want to monetize</option>
+            <option value="freelancer or consultant wanting to scale">Freelancer/consultant wanting to scale</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Goal (optional)</label>
+          <input type="text" id="gen-goal" placeholder="e.g. Generate $1k/month passively within 6 months"/>
+        </div>
+        <div class="gen-submit">
+          <button class="btn-primary" id="gen-btn" onclick="generateNiche()">✦ Generate My Niche Ideas</button>
+          <p class="gen-hint">Takes about 10–15 seconds. Powered by Claude AI.</p>
+        </div>
+      </div>
+      <div class="gen-loading" id="gen-loading">
+        <div class="spinner"></div>
+        <p>Analyzing your profile and generating personalized niche ideas...</p>
+      </div>
+      <div class="gen-error" id="gen-error"></div>
+      <div id="gen-results">
+        <div style="font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:.5rem">Your Personalized Niche Ideas</div>
+        <div class="niche-cards" id="niche-cards"></div>
+        <div style="margin-top:1.5rem;padding:1.25rem;background:rgba(196,98,45,.08);border-left:2px solid var(--terra)">
+          <p style="font-size:.9rem;color:var(--cream-dim)">💡 <strong style="color:var(--cream)">Bring this to your discovery call.</strong> We'll help you pick the strongest one and build your entire strategy around it in Session 1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVERY FORM -->
+<section class="discovery-section" id="discovery">
+  <div class="container">
+    <div class="section-label">Book Your Discovery Call</div>
+    <h2>Ready to Build?<br/><em>Let's Talk.</em></h2>
+    <p class="lead">Fill this out so we can have a focused 15-minute conversation — no fluff, no sales pressure. Just clarity on whether this is the right fit and what you'll get out of it.</p>
+    <div class="form-container">
+      <div class="form-steps">
+        <div class="step-dot active" id="step-1-dot"></div>
+        <div class="step-dot" id="step-2-dot"></div>
+        <div class="step-dot" id="step-3-dot"></div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step-1">
+        <div class="step-label">Step 1 of 3</div>
+        <div class="step-title">Let's Start With You</div>
+        <div class="step-desc">Tell us who you are and where you're at right now.</div>
+        <div class="form-grid">
+          <div class="field"><label>First Name *</label><input type="text" id="fname" placeholder="Your first name"/></div>
+          <div class="field"><label>Last Name *</label><input type="text" id="lname" placeholder="Your last name"/></div>
+          <div class="field full"><label>Email Address *</label><input type="email" id="email" placeholder="your@email.com"/></div>
+          <div class="field full"><label>Phone (Optional)</label><input type="tel" id="phone" placeholder="+1 (555) 000-0000"/></div>
+          <div class="field full">
+            <label>Where Are You Right Now? *</label>
+            <select id="situation">
+              <option value="">Select the best description...</option>
+              <option value="I have a business I want to scale or optimize with AI">I have a business I want to scale with AI</option>
+              <option value="I have an idea and want to build it with AI">I have an idea I want to build</option>
+              <option value="I have a skill or knowledge I want to package and sell">I have a skill I want to monetize</option>
+              <option value="I work a 9-to-5 and want to build side income">9-to-5 building side income</option>
+              <option value="I create content and want to grow and monetize">Content creator wanting to monetize</option>
+              <option value="I'm starting fresh and need to find my niche">Starting fresh, need my niche</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-nav">
+          <div></div>
+          <span class="progress-text">Step 1 of 3</span>
+          <button class="btn-primary" onclick="nextStep(2)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step-2">
+        <div class="step-label">Step 2 of 3</div>
+        <div class="step-title">Tell Us What You're Working With</div>
+        <div class="step-desc">The more specific you are, the more targeted your discovery call will be.</div>
+        <div class="form-grid">
+          <div class="field full">
+            <label>Describe Your Business, Idea, or Skill *</label>
+            <textarea id="business-desc" rows="3" placeholder="e.g. I run a home cleaning service in NJ with 3 employees. I want to use AI to handle my social media, client follow-ups, and eventually sell a digital guide for people starting their own cleaning business."></textarea>
+          </div>
+          <div class="field full">
+            <label>What's Your Biggest Challenge Right Now?</label>
+            <textarea id="challenge" rows="2" placeholder="e.g. I spend too much time creating content and replying to DMs. I never have time to actually build or sell anything new."></textarea>
+          </div>
+          <div class="field full">
+            <label>What Do You Specifically Want AI to Help You With? (Check all that apply)</label>
+            <div class="check-group">
+              <label class="check-option"><input type="checkbox" value="Creating social media content faster"/> <label>Creating social media content faster</label></label>
+              <label class="check-option"><input type="checkbox" value="Growing my social media following"/> <label>Growing my social media following</label></label>
+              <label class="check-option"><input type="checkbox" value="Creating content without being on camera (faceless)"/> <label>Creating content without being on camera</label></label>
+              <label class="check-option"><input type="checkbox" value="Building and selling a digital product"/> <label>Building and selling a digital product</label></label>
+              <label class="check-option"><input type="checkbox" value="Automating repetitive business tasks"/> <label>Automating repetitive business tasks</label></label>
+              <label class="check-option"><input type="checkbox" value="Writing emails, proposals, and client communication"/> <label>Writing emails, proposals & client communication</label></label>
+              <label class="check-option"><input type="checkbox" value="Identifying my niche and packaging my skills"/> <label>Identifying my niche and packaging my skills</label></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="nextStep(1)">← Back</button>
+          <span class="progress-text">Step 2 of 3</span>
+          <button class="btn-primary" onclick="nextStep(3)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step-3">
+        <div class="step-label">Step 3 of 3 — The Important One</div>
+        <div class="step-title">Commitment & Readiness</div>
+        <div class="step-desc">This workshop is built for people who are ready to actually apply what they learn. Not just collect another course. Be honest — this helps us make the most of your call.</div>
+        <div class="form-grid">
+          <div class="field full">
+            <label>What's Your Goal from This Workshop Series?</label>
+            <textarea id="goal" rows="2" placeholder="e.g. I want to have a consistent content schedule running on AI, my first digital product launched, and passive income started within 60 days of the workshop."></textarea>
+          </div>
+          <div class="field full">
+            <label>How Would You Describe Your Commitment Level?</label>
+            <div class="radio-grid">
+              <div class="radio-card" onclick="selectRadio(this,'commitment','Just exploring — learning and gathering information')">
+                <input type="radio" name="commitment" value="Just exploring"/>
+                <div class="radio-card-icon">👀</div>
+                <div class="radio-card-label">Just exploring for now</div>
+              </div>
+              <div class="radio-card" onclick="selectRadio(this,'commitment','Ready to invest — I'm serious and will follow through')">
+                <input type="radio" name="commitment" value="Ready to invest"/>
+                <div class="radio-card-icon">💪</div>
+                <div class="radio-card-label">Ready to invest in myself</div>
+              </div>
+              <div class="radio-card" onclick="selectRadio(this,'commitment','All in — I am committed to applying everything')">
+                <input type="radio" name="commitment" value="All in"/>
+                <div class="radio-card-icon">🔥</div>
+                <div class="radio-card-label">All in — let's go</div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Best Time to Connect</label>
+            <select id="timing">
+              <option value="">Select preferred time...</option>
+              <option>Weekday mornings (9am–12pm EST)</option>
+              <option>Weekday afternoons (12pm–5pm EST)</option>
+              <option>Weekday evenings (5pm–8pm EST)</option>
+              <option>Saturday mornings</option>
+              <option>Saturday afternoons</option>
+              <option>Flexible — any time works</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>How Did You Hear About ZagaPrime?</label>
+            <select id="source">
+              <option value="">Select one...</option>
+              <option>Workshop / event I attended</option>
+              <option>Word of mouth / referral</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Google search</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Anything Else You Want Us to Know Before the Call? (Optional)</label>
+            <textarea id="notes" rows="2" placeholder="Any specific questions, concerns, or context that would help us prepare for your call..."></textarea>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="nextStep(2)">← Back</button>
+          <span class="progress-text">Almost there!</span>
+          <button class="btn-primary" onclick="submitForm()" id="submit-btn">🗓 Submit & Book My Call</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="form-success" id="form-success">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">You're Booked In!</div>
+        <p class="success-text">Your discovery call request has been received. Kelvin will reach out within 24 hours to confirm your time and send a calendar invite. Check your email — and WhatsApp if you shared your number.</p>
+        <div class="success-next">
+          <div class="success-next-item"><span>1</span>Check your email for confirmation</div>
+          <div class="success-next-item"><span>2</span>Set up your free tool accounts (list above)</div>
+          <div class="success-next-item"><span>3</span>Use the Niche Generator if you haven't yet</div>
+          <div class="success-next-item"><span>4</span>Browse the free resources page</div>
+        </div>
+        <a href="resources.html" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">View Free Resources →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="/">ZagaPrime LLC</a>
+      <p>AI automation, digital strategy, and education for entrepreneurs and small business owners. New Jersey-based. Building globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Workshop</h4>
+      <a href="#program">Who It's For</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#prepare">How to Prepare</a>
+      <a href="#discovery">Book Discovery Call</a>
+    </div>
+    <div class="footer-col">
+      <h4>ZagaPrime</h4>
+      <a href="resources.html">Free Resources</a>
+      <a href="resources.html#membership">Community Membership</a>
+      <a href="mailto:kzee@zagaprime.com">kzee@zagaprime.com</a>
+      <a href="https://zagaprime.com" target="_blank">zagaprime.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ZagaPrime LLC. All rights reserved.</span>
+    <span>Built with AI. Run by humans.</span>
+  </div>
+</footer>
+
+<script>
+// ── LIVE CONFIG ──────────────────────────────────────────────────────────────
+const API = {
+  generate: '/api/generate',
+  booking:  '/api/booking',
+  track:    '/api/track',
+};
+
+// ── PAGE VIEW TRACKING ───────────────────────────────────────────────────────
+(function(){
+  let sid = sessionStorage.getItem('zp_sid');
+  if (!sid) { sid = Math.random().toString(36).slice(2); sessionStorage.setItem('zp_sid', sid); }
+  fetch(API.track, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      page: window.location.pathname || '/',
+      referrer: document.referrer || null,
+      session_id: sid
+    })
+  }).catch(()=>{});
+})();
+
+// ── SESSION accordion
+function toggleSession(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.session-card').forEach(c=>c.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
+
+// Multi-step form
+let currentStep=1;
+function nextStep(step){
+  if(step>currentStep&&!validateStep(currentStep))return;
+  document.getElementById('step-'+currentStep).classList.remove('active');
+  document.getElementById('step-'+step).classList.add('active');
+  ['1','2','3'].forEach(n=>{
+    const dot=document.getElementById('step-'+n+'-dot');
+    dot.className='step-dot';
+    if(parseInt(n)<step)dot.classList.add('done');
+    else if(parseInt(n)===step)dot.classList.add('active');
+  });
+  currentStep=step;
+  document.querySelector('.form-container').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function validateStep(step){
+  if(step===1){
+    const fname=document.getElementById('fname').value.trim();
+    const email=document.getElementById('email').value.trim();
+    const sit=document.getElementById('situation').value;
+    if(!fname||!email||!sit){alert('Please fill in your name, email, and current situation.');return false;}
+    if(!email.includes('@')){alert('Please enter a valid email.');return false;}
+  }
+  if(step===2){
+    const desc=document.getElementById('business-desc').value.trim();
+    if(!desc){alert('Please describe your business, idea, or skill.');return false;}
+  }
+  return true;
+}
+
+function selectRadio(el,name,value){
+  document.querySelectorAll(`.radio-card`).forEach(c=>{if(c.querySelector(`input[name="${name}"]`))c.classList.remove('selected')});
+  el.classList.add('selected');
+  el.querySelector('input').checked=true;
+  el.querySelector('input').value=value;
+}
+
+async function submitForm(){
+  if(!validateStep(3))return;
+  const commitment=document.querySelector('input[name="commitment"]:checked');
+  if(!commitment){alert('Please select your commitment level.');return;}
+  const btn=document.getElementById('submit-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+
+  const data={
+    first_name: document.getElementById('fname').value.trim(),
+    last_name: document.getElementById('lname').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    situation: document.getElementById('situation').value,
+    description: document.getElementById('business-desc').value.trim(),
+    challenge: document.getElementById('challenge').value.trim(),
+    aiNeeds: Array.from(document.querySelectorAll('.check-option input:checked')).map(i=>i.value),
+    goal: document.getElementById('goal').value.trim(),
+    commitment: commitment.value,
+    timing: document.getElementById('timing').value,
+    source: document.getElementById('source').value,
+    notes: document.getElementById('notes').value.trim(),
+  };
+
+  try {
+    const res = await fetch(API.booking, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Submission failed');
+
+    document.querySelector('.form-steps').style.display='none';
+    ['step-1','step-2','step-3'].forEach(id=>document.getElementById(id).style.display='none');
+    const success=document.getElementById('form-success');
+    success.classList.add('visible');
+    success.scrollIntoView({behavior:'smooth',block:'center'});
+  } catch(e) {
+    alert('Something went wrong: '+e.message+'. Please try again or email kzee@zagaprime.com directly.');
+    btn.textContent='🗓 Submit & Book My Call';
+    btn.disabled=false;
+  }
+}
+
+// Niche Generator
+async function generateNiche(){
+  const skills=document.getElementById('gen-skills').value.trim();
+  const interests=document.getElementById('gen-interests').value.trim();
+  const situation=document.getElementById('gen-situation').value;
+  const goal=document.getElementById('gen-goal').value.trim();
+  if(!skills||!interests||!situation){alert('Please fill in your skills, interests, and current situation.');return;}
+  const btn=document.getElementById('gen-btn');
+  btn.disabled=true;btn.textContent='Generating...';
+  document.getElementById('gen-loading').classList.add('visible');
+  document.getElementById('gen-results').classList.remove('visible');
+  document.getElementById('gen-error').classList.remove('visible');
+  const systemPrompt=`You are an expert business niche strategist and digital product advisor. When given a person's background, you generate niche business ideas. You MUST respond with ONLY a valid JSON array — no markdown, no backticks, no preamble. The array must contain exactly 3 objects, each with these exact fields: id (number 1-3), nicheName (string), tagline (catchy string under 12 words), targetAudience (string), whyItWorks (string, 2-3 sentences), digitalProducts (array of exactly 3 strings), contentPillars (array of exactly 4 strings), firstStep (string, one clear actionable sentence).`;
+  const userPrompt=`Professional background and skills: ${skills}\nInterests and topics I love helping with: ${interests}\nCurrent situation: ${situation}${goal?'\nGoal: '+goal:''}\n\nGenerate 3 niche ideas for this person. Return ONLY the JSON array.`;
+  try{
+    const res=await fetch(API.generate,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        prompt:userPrompt,
+        systemPrompt,
+        situation,
+        goal
+      })
+    });
+    const data=await res.json();
+    if(!res.ok||data.error)throw new Error(data.error||'Generation failed');
+    let text=data.result.trim();
+    if(text.startsWith('```'))text=text.replace(/```json?\n?/,'').replace(/```$/,'').trim();
+    const niches=JSON.parse(text);
+    renderNiches(niches);
+  }catch(e){
+    document.getElementById('gen-error').textContent='Something went wrong: '+e.message+'. Please try again.';
+    document.getElementById('gen-error').classList.add('visible');
+  }finally{
+    document.getElementById('gen-loading').classList.remove('visible');
+    btn.disabled=false;btn.innerHTML='✦ Generate My Niche Ideas';
+  }
+}
+
+function renderNiches(niches){
+  const container=document.getElementById('niche-cards');
+  container.innerHTML='';
+  niches.forEach(n=>{
+    const card=document.createElement('div');
+    card.className='niche-card';
+    card.innerHTML=`
+      <div class="niche-num">${n.id}</div>
+      <div class="niche-name">${n.nicheName}</div>
+      <div class="niche-tagline">"${n.tagline}"</div>
+      <div class="niche-section">
+        <div class="niche-section-label">Target Audience</div>
+        <p>${n.targetAudience}</p>
+      </div>
+      <div class="niche-section">
+        <div class="niche-section-label">Why It Works</div>
+        <p>${n.whyItWorks}</p>
+      </div>
+      <div class="niche-section">
+        <div class="niche-section-label">Digital Products You Could Sell</div>
+        <ul class="niche-products">${n.digitalProducts.map(p=>`<li>${p}</li>`).join('')}</ul>
+      </div>
+      <div class="niche-section">
+        <div class="niche-section-label">Content Pillars</div>
+        <div class="pillars-list">${n.contentPillars.map(p=>`<span class="pillar-tag">${p}</span>`).join('')}</div>
+      </div>
+      <div class="niche-section" style="margin-top:1rem;padding:.75rem;background:rgba(212,160,23,.06);border-left:2px solid var(--gold)">
+        <div class="niche-section-label" style="color:var(--gold)">Your First Step</div>
+        <p style="color:var(--cream-dim)">${n.firstStep}</p>
+      </div>`;
+    container.appendChild(card);
+  });
+  document.getElementById('gen-results').classList.add('visible');
+  document.getElementById('gen-results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>

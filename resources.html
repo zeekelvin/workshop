@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free Resources & AI Membership — ZagaPrime</title>
+<meta name="description" content="Free AI tools, prompt packs, templates, and the ZagaPrime Community Membership — get premium AI access for less than the cost of one tool."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --espresso:#1A0F0A;--terra:#C4622D;--terra-light:#D97340;
+  --cream:#F5E6D3;--cream-dim:#C9B89E;--gold:#D4A017;--gold-dim:#B8860B;
+  --dark:#2C1810;--card:#231510;--border:#3A1F14;
+  --ff-display:'Playfair Display',serif;--ff-body:'DM Sans',sans-serif;--ff-mono:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--espresso);color:var(--cream);font-family:var(--ff-body);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--terra);color:#fff}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(26,15,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--ff-display);font-size:1.2rem;color:var(--terra);letter-spacing:0.05em;text-decoration:none}
+.nav-logo span{color:var(--cream)}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{color:var(--cream-dim);text-decoration:none;font-size:.875rem;transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{background:var(--terra);color:#fff;padding:.6rem 1.4rem;border-radius:2px;text-decoration:none;font-size:.875rem;font-weight:600;letter-spacing:.05em}
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:.75rem}
+h1,h2{font-family:var(--ff-display);line-height:1.1}
+h1{font-size:clamp(2.5rem,5vw,4rem);color:#fff}
+h1 em,h2 em{font-style:normal;color:var(--terra)}
+h2{font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:1rem}
+h3{font-family:var(--ff-display);font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+.lead{font-size:1.05rem;color:var(--cream-dim);max-width:640px;line-height:1.75;margin-bottom:2rem}
+.btn-primary{background:var(--terra);color:#fff;padding:.85rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:.04em;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--terra-light);transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--espresso);padding:.85rem 2rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;border:none;cursor:pointer}
+.btn-gold:hover{background:#e5b020;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--cream);padding:.75rem 1.75rem;border:1px solid var(--border);border-radius:2px;text-decoration:none;font-weight:500;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-outline:hover{border-color:var(--terra);color:var(--terra)}
+
+/* HERO */
+.res-hero{padding:8rem 2rem 4rem;background:linear-gradient(180deg,#200D07 0%,var(--espresso) 100%);position:relative;overflow:hidden}
+.res-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(196,98,45,.1),transparent)}
+.res-hero-inner{max-width:1100px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);padding:.4rem 1rem;border-radius:2px;margin-bottom:1.25rem}
+.hero-eyebrow span{font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+.res-hero p{font-size:1.1rem;color:var(--cream-dim);max-width:580px;margin:1rem 0 2rem;line-height:1.7}
+.resource-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.rtag{background:rgba(196,98,45,.1);border:1px solid rgba(196,98,45,.2);padding:.3rem .85rem;font-size:.78rem;font-weight:600;letter-spacing:.05em;color:var(--terra);border-radius:1px}
+
+/* FREEBIES */
+.freebies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:2rem}
+.freebie-card{background:var(--card);border:1px solid var(--border);padding:1.75rem;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden;transition:border-color .2s}
+.freebie-card:hover{border-color:var(--terra)}
+.freebie-card::before{content:'FREE';position:absolute;top:.75rem;right:.75rem;background:var(--terra);color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.12em;padding:.25rem .5rem}
+.freebie-icon{font-size:2rem}
+.freebie-title{font-weight:700;font-size:1rem;color:var(--cream)}
+.freebie-desc{font-size:.875rem;color:var(--cream-dim);line-height:1.6;flex:1}
+.freebie-items{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.freebie-items li{font-size:.8rem;color:var(--cream-dim);display:flex;gap:.5rem}
+.freebie-items li::before{content:'→';color:var(--terra);flex-shrink:0}
+.freebie-btn{margin-top:.5rem;background:rgba(196,98,45,.1);color:var(--terra);border:1px solid rgba(196,98,45,.3);padding:.55rem 1rem;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-align:center;font-family:var(--ff-body);text-decoration:none;display:block}
+.freebie-btn:hover{background:rgba(196,98,45,.2);border-color:var(--terra)}
+
+/* TOOLS */
+.tools-section{background:var(--dark)}
+.tools-categories{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2rem}
+.tool-cat-header{display:flex;align-items:center;gap:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);margin-bottom:1.25rem}
+.tool-cat-icon{font-size:1.25rem}
+.tool-cat-name{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim)}
+.tools-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem}
+.tool-chip-card{background:var(--card);border:1px solid var(--border);padding:1rem 1.25rem;transition:border-color .2s;text-decoration:none;display:block}
+.tool-chip-card:hover{border-color:var(--terra)}
+.tool-chip-name{font-weight:700;color:var(--cream);font-size:.9rem;margin-bottom:.2rem;display:flex;align-items:center;justify-content:space-between}
+.tool-chip-url{font-family:var(--ff-mono);font-size:.75rem;color:var(--terra);margin-bottom:.4rem}
+.tool-chip-desc{font-size:.8rem;color:var(--cream-dim);line-height:1.5}
+.tool-badge{font-size:.6rem;font-weight:800;letter-spacing:.08em;padding:.15rem .45rem;border-radius:1px}
+.badge-free{background:rgba(46,125,50,.2);color:#81c784;border:1px solid rgba(46,125,50,.3)}
+.badge-freemium{background:rgba(21,101,192,.15);color:#90caf9;border:1px solid rgba(21,101,192,.3)}
+.badge-hot{background:rgba(212,160,23,.15);color:var(--gold);border:1px solid rgba(212,160,23,.3)}
+
+/* TRENDING */
+.trending-section{background:linear-gradient(180deg,var(--espresso) 0%,#200D07 100%)}
+.trending-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--border);margin-top:2rem;border:1px solid var(--border)}
+.trending-item{background:var(--card);padding:1.5rem;transition:background .2s}
+.trending-item:hover{background:#2C1810}
+.trending-rank{font-family:var(--ff-mono);font-size:.75rem;color:var(--terra);margin-bottom:.5rem}
+.trending-name{font-weight:700;color:var(--cream);font-size:1rem;margin-bottom:.25rem}
+.trending-why{font-size:.85rem;color:var(--cream-dim);line-height:1.5;margin-bottom:.5rem}
+.trending-usecase{font-size:.78rem;color:var(--terra);font-style:italic}
+
+/* MEMBERSHIP — THE BIG SECTION */
+.membership-section{background:var(--dark);position:relative}
+.membership-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.value-proof-box{background:linear-gradient(135deg,rgba(212,160,23,.08),rgba(196,98,45,.05));border:1px solid rgba(212,160,23,.25);padding:2rem;margin:2rem 0;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.value-proof-left h3{font-family:var(--ff-display);font-size:1.5rem;color:#fff;margin-bottom:.5rem}
+.value-proof-left p{font-size:.9rem;color:var(--cream-dim);line-height:1.7}
+.retail-calc{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.retail-calc li{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:.9rem}
+.retail-calc li .tool-name{color:var(--cream-dim)}
+.retail-calc li .price{font-family:var(--ff-mono);color:var(--cream)}
+.retail-calc .total-row{background:rgba(183,28,28,.1);border-color:rgba(183,28,28,.3)}
+.retail-calc .total-row .tool-name{color:#ef9a9a;font-weight:600}
+.retail-calc .total-row .price{color:#ef9a9a;font-weight:700}
+.vs-arrow{text-align:center;font-size:2rem;color:var(--terra);margin:1rem 0}
+
+/* TIERS */
+.tiers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
+.tier-card{background:var(--card);border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.tier-card:hover{transform:translateY(-3px)}
+.tier-card.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(212,160,23,.06),var(--card))}
+.tier-badge{position:absolute;top:0;right:0;background:var(--gold);color:var(--espresso);font-size:.65rem;font-weight:800;letter-spacing:.1em;padding:.4rem .75rem;text-transform:uppercase}
+.tier-name{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:.5rem}
+.tier-card.featured .tier-name{color:var(--gold)}
+.tier-title{font-family:var(--ff-display);font-size:1.4rem;color:#fff;margin-bottom:.25rem}
+.tier-price{display:flex;align-items:baseline;gap:.35rem;margin:1rem 0}
+.price-amount{font-family:var(--ff-display);font-size:2.8rem;color:#fff;line-height:1}
+.tier-card.featured .price-amount{color:var(--gold)}
+.price-period{font-size:.85rem;color:var(--cream-dim)}
+.price-billed{font-size:.75rem;color:var(--cream-dim);margin-top:.2rem}
+.tier-tagline{font-size:.875rem;color:var(--cream-dim);margin-bottom:1.25rem;font-style:italic}
+.tier-includes{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.5rem}
+.tier-includes li{display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--cream-dim)}
+.tier-includes li .check{flex-shrink:0;color:var(--terra);font-weight:700;margin-top:.05rem}
+.tier-card.featured .tier-includes li .check{color:var(--gold)}
+.tier-includes li strong{color:var(--cream)}
+.tier-savings{background:rgba(46,125,50,.12);border:1px solid rgba(46,125,50,.25);padding:.75rem 1rem;margin-bottom:1.25rem;font-size:.875rem}
+.tier-savings .saving-amount{color:#81c784;font-weight:700;font-size:1.05rem}
+.tier-savings p{color:var(--cream-dim);margin-top:.25rem;font-size:.8rem}
+
+/* VALUE MATH */
+.value-math{background:var(--espresso);border:1px solid var(--border);padding:2rem;margin:2.5rem 0}
+.value-math h3{font-family:var(--ff-display);font-size:1.5rem;color:#fff;margin-bottom:.25rem}
+.value-math .subtitle{font-size:.875rem;color:var(--cream-dim);margin-bottom:1.5rem}
+.math-scenarios{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.math-scenario{padding:1.25rem;background:var(--card);border:1px solid var(--border);text-align:center}
+.scenario-size{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:.4rem}
+.scenario-members{font-family:var(--ff-display);font-size:1.5rem;color:#fff}
+.scenario-math{font-size:.8rem;color:var(--cream-dim);margin:.4rem 0;font-family:var(--ff-mono)}
+.scenario-margin{font-size:1.1rem;font-weight:700;color:#81c784;margin-top:.4rem}
+
+/* FAQ CALLOUT */
+.callout-box{background:rgba(196,98,45,.08);border:1px solid rgba(196,98,45,.25);border-left:3px solid var(--terra);padding:1.5rem;margin:2rem 0}
+.callout-box p{font-size:.95rem;color:var(--cream-dim);line-height:1.7}
+.callout-box strong{color:var(--cream)}
+
+/* COMING SOON */
+.coming-soon{border:1px dashed var(--border);padding:2rem;text-align:center;margin-top:2rem;opacity:.7}
+.coming-soon h3{font-family:var(--ff-display);font-size:1.2rem;color:var(--cream-dim);margin-bottom:.5rem}
+.coming-soon p{font-size:.875rem;color:var(--cream-dim)}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
+.footer-brand .logo{font-family:var(--ff-display);font-size:1.3rem;color:var(--terra);display:block;margin-bottom:.75rem}
+.footer-brand p{font-size:.875rem;color:var(--cream-dim);line-height:1.6}
+.footer-col h4{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:.75rem}
+.footer-col a{display:block;color:var(--cream-dim);text-decoration:none;font-size:.875rem;margin-bottom:.4rem;transition:color .2s}
+.footer-col a:hover{color:var(--terra)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:.8rem;color:var(--cream-dim)}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .value-proof-box,.footer-inner{grid-template-columns:1fr}
+  .tiers-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Zaga<span>Prime</span></a>
+  <div class="nav-links">
+    <a href="/">Workshop</a>
+    <a href="#freebies">Free Resources</a>
+    <a href="#tools">AI Tools</a>
+    <a href="#membership">Membership</a>
+    <a href="index.html#discovery" class="nav-cta">Book Discovery Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="res-hero">
+  <div class="res-hero-inner">
+    <div class="hero-eyebrow"><span>ZagaPrime Resources Hub</span></div>
+    <h1>Free Tools,<br/>Real <em>Value.</em></h1>
+    <p>Everything you need to start using AI in your business — prompt packs, tool guides, templates, and the ZagaPrime Community Membership that gets you premium AI access for less than the price of one tool.</p>
+    <div class="resource-tags">
+      <span class="rtag">Free Prompt Packs</span>
+      <span class="rtag">AI Tools Directory</span>
+      <span class="rtag">Trending Tools</span>
+      <span class="rtag">Community Membership</span>
+      <span class="rtag">Value Calculator</span>
+    </div>
+  </div>
+</div>
+
+<!-- FREEBIES -->
+<section id="freebies">
+  <div class="container">
+    <div class="section-label">Free Resources</div>
+    <h2>Start Using AI Today.<br/><em>Zero</em> Cost.</h2>
+    <p class="lead">These resources are built to give you immediate value — not just "inspiration content." Download, use, and apply them this week.</p>
+    <div class="freebies-grid">
+
+      <div class="freebie-card">
+        <div class="freebie-icon">✍️</div>
+        <div class="freebie-title">The Social Media Prompt Pack</div>
+        <div class="freebie-desc">50 tested, ready-to-use prompts for Instagram captions, reel scripts, bios, hashtag sets, and story ideas — categorized by content type.</div>
+        <ul class="freebie-items">
+          <li>10 caption prompt templates by niche</li>
+          <li>8 reel/TikTok script formulas</li>
+          <li>5 bio prompts for any business type</li>
+          <li>15 engagement-boosting story prompts</li>
+          <li>12 hashtag research prompts</li>
+        </ul>
+        <a href="#" class="freebie-btn" onclick="showComingSoon(this)">Download Free Prompt Pack →</a>
+      </div>
+
+      <div class="freebie-card">
+        <div class="freebie-icon">🗓️</div>
+        <div class="freebie-title">30-Day Content Calendar Template</div>
+        <div class="freebie-desc">A Google Sheets template pre-formatted with columns for content pillar, format, caption draft, hashtags, and post status. Works with any niche.</div>
+        <ul class="freebie-items">
+          <li>Pre-built 30-row calendar structure</li>
+          <li>Content pillar color-coding system</li>
+          <li>Format legend (reel/carousel/static/story)</li>
+          <li>Monthly analytics tracking tab</li>
+        </ul>
+        <a href="#" class="freebie-btn" onclick="showComingSoon(this)">Get the Calendar Template →</a>
+      </div>
+
+      <div class="freebie-card">
+        <div class="freebie-icon">🤖</div>
+        <div class="freebie-title">AI Avatar Quick-Start Guide</div>
+        <div class="freebie-desc">Step-by-step setup guide for HeyGen, D-ID, and ElevenLabs voice cloning. Includes prompt templates for scripts and the Midjourney character formula.</div>
+        <ul class="freebie-items">
+          <li>HeyGen free account setup walkthrough</li>
+          <li>D-ID talking photo tutorial</li>
+          <li>ElevenLabs voice clone steps</li>
+          <li>Midjourney --cref character formula</li>
+          <li>5 starter script templates</li>
+        </ul>
+        <a href="#" class="freebie-btn" onclick="showComingSoon(this)">Download Avatar Guide →</a>
+      </div>
+
+      <div class="freebie-card">
+        <div class="freebie-icon">💰</div>
+        <div class="freebie-title">Digital Product Starter Kit</div>
+        <div class="freebie-desc">The full AI prompt system to ideate, outline, and launch your first digital product — plus a product launch checklist and platform comparison guide.</div>
+        <ul class="freebie-items">
+          <li>Skill audit worksheet (identify your product)</li>
+          <li>AI ideation prompt + outline prompt</li>
+          <li>7-day product creation plan template</li>
+          <li>Platform comparison: Gumroad vs Payhip vs Stan</li>
+          <li>Sales page copy template</li>
+        </ul>
+        <a href="#" class="freebie-btn" onclick="showComingSoon(this)">Download Starter Kit →</a>
+      </div>
+
+      <div class="freebie-card">
+        <div class="freebie-icon">📧</div>
+        <div class="freebie-title">Business Communication Prompt Pack</div>
+        <div class="freebie-desc">25 AI prompts for writing professional emails, proposals, client follow-ups, DMs, and inquiry responses — for any service-based business.</div>
+        <ul class="freebie-items">
+          <li>5 customer inquiry response prompts</li>
+          <li>4 proposal and quote templates</li>
+          <li>6 follow-up message prompts</li>
+          <li>4 DM outreach prompts (non-spammy)</li>
+          <li>6 general business writing prompts</li>
+        </ul>
+        <a href="#" class="freebie-btn" onclick="showComingSoon(this)">Get the Prompt Pack →</a>
+      </div>
+
+      <div class="freebie-card">
+        <div class="freebie-icon">⚙️</div>
+        <div class="freebie-title">Zapier Automation Starter Pack</div>
+        <div class="freebie-desc">The 5 most impactful no-code automations for small businesses — with step-by-step setup guides so you can copy them in under 20 minutes each.</div>
+        <ul class="freebie-items">
+          <li>Instagram → Facebook auto-share Zap</li>
+          <li>Form submission → welcome email Zap</li>
+          <li>Calendly → reminder email Zap</li>
+          <li>Google Form → spreadsheet Zap</li>
+          <li>Gmail keyword → auto-label Zap</li>
+        </ul>
+        <a href="#" class="freebie-btn" onclick="showComingSoon(this)">Get Automation Guide →</a>
+      </div>
+
+    </div>
+    <div class="coming-soon" style="margin-top:1.5rem">
+      <h3>🔜 More Coming Soon</h3>
+      <p>Brand Strategy Workbook • Niche Validation Checklist • AI Daily Workflow Template • Workshop Slide Decks</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- AI TOOLS DIRECTORY -->
+<section class="tools-section" id="tools">
+  <div class="container">
+    <div class="section-label">AI Tools Directory</div>
+    <h2>The Only List<br/>You <em>Need.</em></h2>
+    <p class="lead">Curated tools organized by what you're trying to do. All have free tiers. No fluff.</p>
+    <div class="tools-categories">
+
+      <div>
+        <div class="tool-cat-header"><span class="tool-cat-icon">✍️</span><span class="tool-cat-name">Writing & Content AI</span></div>
+        <div class="tools-row">
+          <a class="tool-chip-card" href="https://chatgpt.com" target="_blank"><div class="tool-chip-name">ChatGPT <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">chatgpt.com</div><div class="tool-chip-desc">The most popular AI chat. Captions, scripts, brainstorming, Q&A. Start here.</div></a>
+          <a class="tool-chip-card" href="https://claude.ai" target="_blank"><div class="tool-chip-name">Claude <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">claude.ai</div><div class="tool-chip-desc">Best for strategy, long-form content, proposals. More nuanced responses.</div></a>
+          <a class="tool-chip-card" href="https://gemini.google.com" target="_blank"><div class="tool-chip-name">Gemini <span class="tool-badge badge-free">Free</span></div><div class="tool-chip-url">gemini.google.com</div><div class="tool-chip-desc">Google's AI. Integrates with Docs, Gmail, Slides. Great for G Suite users.</div></a>
+          <a class="tool-chip-card" href="https://perplexity.ai" target="_blank"><div class="tool-chip-name">Perplexity <span class="tool-badge badge-free">Free</span></div><div class="tool-chip-url">perplexity.ai</div><div class="tool-chip-desc">AI with live web search. Great for research with real citations.</div></a>
+          <a class="tool-chip-card" href="https://copy.ai" target="_blank"><div class="tool-chip-name">Copy.ai <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">copy.ai</div><div class="tool-chip-desc">Marketing copy specialist. Great for ads, emails, product descriptions.</div></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tool-cat-header"><span class="tool-cat-icon">🤖</span><span class="tool-cat-name">AI Avatar & Faceless Video</span></div>
+        <div class="tools-row">
+          <a class="tool-chip-card" href="https://heygen.com" target="_blank"><div class="tool-chip-name">HeyGen <span class="tool-badge badge-hot">🔥 Hot</span></div><div class="tool-chip-url">heygen.com</div><div class="tool-chip-desc">Leading AI avatar tool. Create your AI twin. Type script, avatar speaks it. Free: 1 min/month.</div></a>
+          <a class="tool-chip-card" href="https://d-id.com" target="_blank"><div class="tool-chip-name">D-ID <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">d-id.com</div><div class="tool-chip-desc">Upload any photo, make it talk. Fastest faceless content creation. Free: 5 videos.</div></a>
+          <a class="tool-chip-card" href="https://synthesia.io" target="_blank"><div class="tool-chip-name">Synthesia <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">synthesia.io</div><div class="tool-chip-desc">150+ avatars, 120+ languages. Most professional output. Free: 3 min/month.</div></a>
+          <a class="tool-chip-card" href="https://elevenlabs.io" target="_blank"><div class="tool-chip-name">ElevenLabs <span class="tool-badge badge-hot">🔥 Hot</span></div><div class="tool-chip-url">elevenlabs.io</div><div class="tool-chip-desc">Clone your voice from 1 minute of audio. Narrate anything in your exact voice.</div></a>
+          <a class="tool-chip-card" href="https://runwayml.com" target="_blank"><div class="tool-chip-name">Runway <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">runwayml.com</div><div class="tool-chip-desc">AI video generation and editing. Text-to-video, background removal, more.</div></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tool-cat-header"><span class="tool-cat-icon">🎨</span><span class="tool-cat-name">Design & Visual AI</span></div>
+        <div class="tools-row">
+          <a class="tool-chip-card" href="https://canva.com" target="_blank"><div class="tool-chip-name">Canva AI <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">canva.com</div><div class="tool-chip-desc">Design + AI combined. Magic Write, text-to-image, brand kit. Essential for creators.</div></a>
+          <a class="tool-chip-card" href="https://midjourney.com" target="_blank"><div class="tool-chip-name">Midjourney <span class="tool-badge badge-hot">🔥 Hot</span></div><div class="tool-chip-url">midjourney.com</div><div class="tool-chip-desc">Best AI image quality. Create consistent AI characters with --cref. Via Discord.</div></a>
+          <a class="tool-chip-card" href="https://ideogram.ai" target="_blank"><div class="tool-chip-name">Ideogram <span class="tool-badge badge-free">Free</span></div><div class="tool-chip-url">ideogram.ai</div><div class="tool-chip-desc">Great at text-in-images + character creation. Strong free plan.</div></a>
+          <a class="tool-chip-card" href="https://firefly.adobe.com" target="_blank"><div class="tool-chip-name">Adobe Firefly <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">firefly.adobe.com</div><div class="tool-chip-desc">Commercial-safe AI images. Integrates with Photoshop and Illustrator.</div></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tool-cat-header"><span class="tool-cat-icon">⚙️</span><span class="tool-cat-name">Automation & Productivity</span></div>
+        <div class="tools-row">
+          <a class="tool-chip-card" href="https://zapier.com" target="_blank"><div class="tool-chip-name">Zapier <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">zapier.com</div><div class="tool-chip-desc">Connect 5,000+ apps. No code needed. The automation standard. Free plan available.</div></a>
+          <a class="tool-chip-card" href="https://make.com" target="_blank"><div class="tool-chip-name">Make <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">make.com</div><div class="tool-chip-desc">Visual workflow builder. More powerful than Zapier. Great free plan.</div></a>
+          <a class="tool-chip-card" href="https://notion.so" target="_blank"><div class="tool-chip-name">Notion AI <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">notion.so</div><div class="tool-chip-desc">All-in-one workspace + AI writing assistant built in. SOPs, plans, databases.</div></a>
+          <a class="tool-chip-card" href="https://ifttt.com" target="_blank"><div class="tool-chip-name">IFTTT <span class="tool-badge badge-free">Free</span></div><div class="tool-chip-url">ifttt.com</div><div class="tool-chip-desc">Simplest automations for personal use. Great starter option before Zapier.</div></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tool-cat-header"><span class="tool-cat-icon">💰</span><span class="tool-cat-name">Sell Your Digital Products</span></div>
+        <div class="tools-row">
+          <a class="tool-chip-card" href="https://gumroad.com" target="_blank"><div class="tool-chip-name">Gumroad <span class="tool-badge badge-free">Free</span></div><div class="tool-chip-url">gumroad.com</div><div class="tool-chip-desc">Free forever. Sell any digital file. 10% fee on free plan. Best to start.</div></a>
+          <a class="tool-chip-card" href="https://payhip.com" target="_blank"><div class="tool-chip-name">Payhip <span class="tool-badge badge-free">Free</span></div><div class="tool-chip-url">payhip.com</div><div class="tool-chip-desc">Free forever. 5% fee. Clean storefront for ebooks and templates.</div></a>
+          <a class="tool-chip-card" href="https://stan.store" target="_blank"><div class="tool-chip-name">Stan.store <span class="tool-badge badge-hot">🔥 Popular</span></div><div class="tool-chip-url">stan.store</div><div class="tool-chip-desc">Creator-focused link-in-bio storefront. Huge among Instagram and TikTok creators.</div></a>
+          <a class="tool-chip-card" href="https://etsy.com" target="_blank"><div class="tool-chip-name">Etsy Digital <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">etsy.com</div><div class="tool-chip-desc">Huge built-in audience searching for printables, templates, and guides.</div></a>
+          <a class="tool-chip-card" href="https://teachable.com" target="_blank"><div class="tool-chip-name">Teachable <span class="tool-badge badge-freemium">Freemium</span></div><div class="tool-chip-url">teachable.com</div><div class="tool-chip-desc">Best for mini-courses and workshop recordings. Free plan available.</div></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING -->
+<section class="trending-section" id="trending">
+  <div class="container">
+    <div class="section-label">🔥 Trending Right Now</div>
+    <h2>What's Hot in<br/><em>AI This Month.</em></h2>
+    <p class="lead">Tools and trends that are generating the most buzz in the creator and entrepreneur space. Updated regularly.</p>
+    <div class="trending-grid">
+      <div class="trending-item"><div class="trending-rank">#01 TRENDING</div><div class="trending-name">AI Avatars & Faceless Channels</div><div class="trending-why">Faceless content creators are building massive audiences without ever appearing on camera. HeyGen and D-ID are at the center of this movement.</div><div class="trending-usecase">Use for: YouTube, TikTok, and Instagram Reels without personal branding pressure</div></div>
+      <div class="trending-item"><div class="trending-rank">#02 TRENDING</div><div class="trending-name">Voice Cloning for Content</div><div class="trending-why">ElevenLabs voice cloning lets creators narrate videos, courses, and podcasts in their own voice without sitting in front of a mic for every recording.</div><div class="trending-usecase">Use for: Course narration, podcast content, AI video voiceover</div></div>
+      <div class="trending-item"><div class="trending-rank">#03 TRENDING</div><div class="trending-name">AI Prompt Packs as Products</div><div class="trending-why">Curated, tested prompt collections are selling for $9–$29 on Gumroad and Etsy. Low effort to create, high demand from people new to AI tools.</div><div class="trending-usecase">Use for: Your first digital product — fastest to create and sell</div></div>
+      <div class="trending-item"><div class="trending-rank">#04 TRENDING</div><div class="trending-name">Consistent AI Characters</div><div class="trending-why">Brand mascots created with Midjourney's --cref feature are being used to build recognizable faceless brands across social media.</div><div class="trending-usecase">Use for: Brand identity without personal branding or face exposure</div></div>
+      <div class="trending-item"><div class="trending-rank">#05 TRENDING</div><div class="trending-name">AI-Generated Mini-Courses</div><div class="trending-why">Entrepreneurs are using AI to outline, write, and record short courses on their phone — then selling them at $27–$97 on Teachable or Gumroad.</div><div class="trending-usecase">Use for: Monetizing expertise fast, first passive income product</div></div>
+      <div class="trending-item"><div class="trending-rank">#06 TRENDING</div><div class="trending-name">No-Code Automation Stacks</div><div class="trending-why">Zapier and Make are seeing record adoption as solopreneurs automate repetitive work — freeing time to focus on creation and growth.</div><div class="trending-usecase">Use for: Saving 5–10 hours/week on admin tasks you currently do manually</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="membership-section" id="membership">
+  <div class="container">
+    <div class="section-label">ZagaPrime Community Membership</div>
+    <h2>Premium AI Access.<br/><em>Community Price.</em></h2>
+    <p class="lead">Why pay retail for every tool separately when you can get everything under one ZagaPrime membership — and save money while gaining community support?</p>
+
+    <!-- THE MATH PROOF -->
+    <div class="value-proof-box">
+      <div class="value-proof-left">
+        <h3>Here's what it costs if you do it alone:</h3>
+        <p>Most serious content creators and entrepreneurs end up subscribing to 3–5 AI tools separately. Here's what that actually costs you every month at retail pricing — before you've even started making money with them.</p>
+        <div class="vs-arrow">↓</div>
+        <p style="color:var(--terra);font-weight:600;font-size:1rem">The ZagaPrime Community Basic plan covers the essentials for <strong style="color:#fff">$35/month</strong>. That's it.</p>
+      </div>
+      <div>
+        <ul class="retail-calc">
+          <li><span class="tool-name">Claude Pro (claude.ai)</span><span class="price">$20/mo</span></li>
+          <li><span class="tool-name">ChatGPT Plus (chatgpt.com)</span><span class="price">$20/mo</span></li>
+          <li><span class="tool-name">Canva Pro (canva.com)</span><span class="price">$15/mo</span></li>
+          <li><span class="tool-name">HeyGen Starter (heygen.com)</span><span class="price">$24/mo</span></li>
+          <li><span class="tool-name">ElevenLabs Starter</span><span class="price">$11/mo</span></li>
+          <li class="total-row"><span class="tool-name">⚠️ Total If Buying Separately</span><span class="price">$90/mo</span></li>
+        </ul>
+        <div style="margin-top:.75rem;font-size:.8rem;color:var(--cream-dim);font-style:italic">Most people only use 2–3 of these features regularly. You're paying for everything you don't use.</div>
+      </div>
+    </div>
+
+    <!-- TIERS -->
+    <div class="tiers-grid">
+
+      <div class="tier-card">
+        <div class="tier-name">Workshop Access</div>
+        <div class="tier-title">Workshop Only</div>
+        <div class="tier-price"><span class="price-amount">$300</span><span class="price-period">/once</span></div>
+        <div class="price-billed">Full Series (3 sessions) • Group Rate</div>
+        <div class="tier-tagline">"Show up, build, and leave with skills."</div>
+        <ul class="tier-includes">
+          <li><span class="check">✓</span><span>All 3 live workshop sessions (7.5 hrs)</span></li>
+          <li><span class="check">✓</span><span>Session slide decks (PDF)</span></li>
+          <li><span class="check">✓</span><span>Hands-on exercise workbooks</span></li>
+          <li><span class="check">✓</span><span>AI Tools resource list</span></li>
+          <li><span class="check">✓</span><span>ZagaPrime Certificate of Completion</span></li>
+          <li><span class="check">✓</span><span>Email support during sessions</span></li>
+        </ul>
+        <div class="tier-savings">
+          <div class="saving-amount">$50/person for 6 people</div>
+          <p>6-person group of $300 = only $50/person for 7.5 hours of hands-on AI training</p>
+        </div>
+        <a href="index.html#discovery" class="btn-outline" style="width:100%;justify-content:center">Book Discovery Call →</a>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-name">Community Basic</div>
+        <div class="tier-title">ZagaPrime AI Hub</div>
+        <div class="tier-price"><span class="price-amount">$35</span><span class="price-period">/month</span></div>
+        <div class="price-billed">Billed monthly • Cancel anytime</div>
+        <div class="tier-tagline">"AI access, community, and ongoing support."</div>
+        <ul class="tier-includes">
+          <li><span class="check">✓</span><span><strong>Claude Team Access</strong> — shared org seat</span></li>
+          <li><span class="check">✓</span><span>Full prompt library (100+ prompts)</span></li>
+          <li><span class="check">✓</span><span>Monthly group training session (live)</span></li>
+          <li><span class="check">✓</span><span>Private community access (group chat)</span></li>
+          <li><span class="check">✓</span><span>All free resource downloads (members only)</span></li>
+          <li><span class="check">✓</span><span>New tool walkthroughs as they drop</span></li>
+          <li><span class="check">✓</span><span>Email support (business days)</span></li>
+        </ul>
+        <div class="tier-savings">
+          <div class="saving-amount">You save $55/month vs retail</div>
+          <p>Claude Pro alone is $20/month. Add community + training and you're getting $90 of value for $35.</p>
+        </div>
+        <a href="index.html#discovery" class="btn-gold" style="width:100%;justify-content:center">Join the Community →</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">Community Pro</div>
+        <div class="tier-title">ZagaPrime Pro Hub</div>
+        <div class="tier-price"><span class="price-amount">$55</span><span class="price-period">/month</span></div>
+        <div class="price-billed">Billed monthly • Cancel anytime</div>
+        <div class="tier-tagline">"Everything in Basic + coaching + Canva Pro."</div>
+        <ul class="tier-includes">
+          <li><span class="check">✓</span><span>Everything in Community Basic</span></li>
+          <li><span class="check">✓</span><span><strong>Canva Pro Access</strong> included</span></li>
+          <li><span class="check">✓</span><span>Weekly Office Hours with Kelvin (live Q&A)</span></li>
+          <li><span class="check">✓</span><span>Priority 24hr response support</span></li>
+          <li><span class="check">✓</span><span>Digital product review & feedback</span></li>
+          <li><span class="check">✓</span><span>Done-for-you prompt pack templates</span></li>
+          <li><span class="check">✓</span><span>Early access to new ZagaPrime tools + workshops</span></li>
+        </ul>
+        <div class="tier-savings">
+          <div class="saving-amount">You save $80/month vs retail</div>
+          <p>Claude Pro ($20) + Canva Pro ($15) + coaching = $80+ value. You're paying $55 and getting more.</p>
+        </div>
+        <a href="index.html#discovery" class="btn-outline" style="width:100%;justify-content:center">Apply for Pro →</a>
+      </div>
+
+    </div>
+
+    <!-- VALUE MATH TABLE -->
+    <div class="value-math">
+      <h3>The Numbers Don't Lie — Here's What Each Member Pays vs. Gets</h3>
+      <p class="subtitle">At Community Basic ($35/month), here's what you get for your money vs. buying it retail:</p>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.875rem;margin-top:.5rem">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:.75rem;background:var(--espresso);color:var(--terra);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border)">What You Get</th>
+              <th style="text-align:center;padding:.75rem;background:var(--espresso);color:var(--terra);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border)">Retail Value</th>
+              <th style="text-align:center;padding:.75rem;background:var(--espresso);color:var(--gold);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border)">Your Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--card)"><td style="padding:.65rem .75rem;color:var(--cream-dim);border-bottom:1px solid var(--border)">Claude AI Access (Team Seat)</td><td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$20/mo</td><td style="padding:.65rem;text-align:center;color:var(--gold);font-weight:700;border-bottom:1px solid var(--border)">Included</td></tr>
+            <tr style="background:rgba(255,255,255,.02)"><td style="padding:.65rem .75rem;color:var(--cream-dim);border-bottom:1px solid var(--border)">Monthly Live Training Session (90 min)</td><td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$50+/session</td><td style="padding:.65rem;text-align:center;color:var(--gold);font-weight:700;border-bottom:1px solid var(--border)">Included</td></tr>
+            <tr style="background:var(--card)"><td style="padding:.65rem .75rem;color:var(--cream-dim);border-bottom:1px solid var(--border)">100+ Prompt Library (curated, tested)</td><td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$15–$29</td><td style="padding:.65rem;text-align:center;color:var(--gold);font-weight:700;border-bottom:1px solid var(--border)">Included</td></tr>
+            <tr style="background:rgba(255,255,255,.02)"><td style="padding:.65rem .75rem;color:var(--cream-dim);border-bottom:1px solid var(--border)">Private Community & Accountability Group</td><td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$20–$50/mo</td><td style="padding:.65rem;text-align:center;color:var(--gold);font-weight:700;border-bottom:1px solid var(--border)">Included</td></tr>
+            <tr style="background:var(--card)"><td style="padding:.65rem .75rem;color:var(--cream-dim);border-bottom:1px solid var(--border)">New Tool Walkthroughs & Resource Downloads</td><td style="padding:.65rem;text-align:center;color:var(--cream-dim);border-bottom:1px solid var(--border)">$10–$20/mo</td><td style="padding:.65rem;text-align:center;color:var(--gold);font-weight:700;border-bottom:1px solid var(--border)">Included</td></tr>
+            <tr style="background:rgba(212,160,23,.05);"><td style="padding:.75rem;color:#fff;font-weight:700;border-top:1px solid var(--gold)">Total Value</td><td style="padding:.75rem;text-align:center;color:#ef9a9a;font-weight:700;border-top:1px solid var(--gold)">$115–$169/mo</td><td style="padding:.75rem;text-align:center;color:var(--gold);font-weight:700;font-size:1.1rem;border-top:1px solid var(--gold)">$35/mo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- COMMUNITY SIZE MATH -->
+    <h3 style="font-family:var(--ff-display);font-size:1.4rem;color:#fff;margin:2rem 0 .5rem">How the Community Model Works</h3>
+    <p class="lead" style="margin-bottom:1rem;font-size:.95rem">ZagaPrime subscribes to team-tier AI plans and manages access for community members — passing the savings on to you while maintaining a sustainable model. Here's the math at different community sizes:</p>
+    <div class="value-math" style="margin-top:0">
+      <div class="math-scenarios">
+        <div class="math-scenario"><div class="scenario-size">Starter</div><div class="scenario-members">10 Members</div><div class="scenario-math">10 × $35 = $350/mo<br/>Tool cost ≈ $200/mo</div><div class="scenario-margin">+$150/mo margin</div></div>
+        <div class="math-scenario"><div class="scenario-size">Growing</div><div class="scenario-members">20 Members</div><div class="scenario-math">20 × $35 = $700/mo<br/>Tool cost ≈ $400/mo</div><div class="scenario-margin">+$300/mo margin</div></div>
+        <div class="math-scenario"><div class="scenario-size">Active</div><div class="scenario-members">30 Members</div><div class="scenario-math">30 × $35 = $1,050/mo<br/>Tool cost ≈ $600/mo</div><div class="scenario-margin">+$450/mo margin</div></div>
+        <div class="math-scenario"><div class="scenario-size">Scaled</div><div class="scenario-members">50 Members</div><div class="scenario-math">50 × $35 = $1,750/mo<br/>Tool cost ≈ $1,000/mo</div><div class="scenario-margin">+$750/mo margin</div></div>
+      </div>
+      <p style="font-size:.8rem;color:var(--cream-dim);margin-top:1.25rem;font-style:italic">Members get $90+ in value for $35. ZagaPrime runs a sustainable operation. Everyone wins. This is community-first economics.</p>
+    </div>
+
+    <div class="callout-box">
+      <p>⚠️ <strong>Important transparency note:</strong> ZagaPrime Community members are part of a ZagaPrime LLC organizational workspace — not individual retail subscribers. This structure is designed for community education and professional development. Membership is subject to community guidelines and fair usage. We are committed to keeping this model accessible, transparent, and genuinely valuable — not extractive.</p>
+    </div>
+
+    <div style="text-align:center;padding:2rem 0">
+      <p style="font-size:1.1rem;color:var(--cream-dim);margin-bottom:1.25rem">Ready to stop paying retail for tools you barely use?</p>
+      <a href="index.html#discovery" class="btn-gold">Join the ZagaPrime Community →</a>
+    </div>
+
+    <!-- ROOM TO GROW -->
+    <div class="coming-soon">
+      <h3>🔜 Coming Soon to the Membership</h3>
+      <p>ZagaPrime Custom AI Chat (API-powered) • Member Storefront on zaga.store • Cohort Accountability Groups • Advanced Automation Masterclasses • Group Canva Pro Plan</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="/">ZagaPrime LLC</a>
+      <p>AI automation, digital strategy, and education. New Jersey-based. Building globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#freebies">Free Downloads</a>
+      <a href="#tools">AI Tools Directory</a>
+      <a href="#trending">Trending Tools</a>
+      <a href="#membership">Community Membership</a>
+    </div>
+    <div class="footer-col">
+      <h4>ZagaPrime</h4>
+      <a href="/">Workshop</a>
+      <a href="index.html#niche-gen">Niche Generator</a>
+      <a href="index.html#discovery">Book Discovery Call</a>
+      <a href="mailto:kzee@zagaprime.com">kzee@zagaprime.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ZagaPrime LLC. All rights reserved.</span>
+    <span>kzee@zagaprime.com • zagaprime.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  let sid = sessionStorage.getItem('zp_sid');
+  if (!sid) { sid = Math.random().toString(36).slice(2); sessionStorage.setItem('zp_sid', sid); }
+  fetch('/api/track', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ page: '/resources', referrer: document.referrer || null, session_id: sid })
+  }).catch(()=>{});
+})();
+function showComingSoon(btn){
+  btn.textContent='🔜 Coming Soon — Join the waitlist!';
+  btn.style.background='rgba(212,160,23,.1)';
+  btn.style.color='var(--gold)';
+  btn.style.borderColor='rgba(212,160,23,.3)';
+  btn.onclick=null;
+}
+</script>
+</body>
+</html>
