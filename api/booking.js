@@ -11,12 +11,17 @@ export default async function handler(req, res) {
   }
 
   const sb = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_ANON_KEY;
+  // Prefer service role (bypasses RLS, returns inserted row) if available; fall back to anon.
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.SUPABASE_ANON_KEY;
+  const useServiceRole = serviceKey && !serviceKey.includes('your_service_role_key_here');
+  const key = useServiceRole ? serviceKey : anonKey;
   const resendKey = process.env.RESEND_API_KEY;
 
   let bookingId = null;
 
-  // 1. Save to Supabase
+  // 1. Save to Supabase. Anon role only has INSERT policy (no SELECT) so we
+  // can't request return=representation unless we're using the service role.
   try {
     const r = await fetch(`${sb}/rest/v1/workshop_bookings`, {
       method: 'POST',
@@ -24,7 +29,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
         'apikey': key,
         'Authorization': `Bearer ${key}`,
-        'Prefer': 'return=representation'
+        'Prefer': useServiceRole ? 'return=representation' : 'return=minimal'
       },
       body: JSON.stringify({
         first_name: data.first_name,
@@ -43,9 +48,11 @@ export default async function handler(req, res) {
         status: 'new'
       })
     });
-    if (r.ok) {
+    if (r.ok && useServiceRole) {
       const saved = await r.json();
       bookingId = saved?.[0]?.id;
+    } else if (!r.ok) {
+      console.error('Supabase insert failed:', r.status, await r.text());
     }
   } catch (e) {
     console.error('Supabase save error:', e);
