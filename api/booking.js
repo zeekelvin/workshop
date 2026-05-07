@@ -54,6 +54,9 @@ export default async function handler(req, res) {
   // 2. Send email notification via Resend
   if (resendKey) {
     const aiNeedsList = Array.isArray(data.aiNeeds) ? data.aiNeeds.join(', ') : '';
+    const fromAddress = process.env.RESEND_FROM || 'ZagaPrime Workshop <noreply@zagaprimeai.com>';
+    const toAddress = process.env.BOOKING_NOTIFICATION_EMAIL || 'zagaprime@gmail.com';
+    const adminUrl = process.env.ADMIN_DASHBOARD_URL || 'https://workshop-three-iota.vercel.app/admin';
     const emailBody = `
 <h2 style="color:#C4622D">New Discovery Call Booking — ZagaPrime Workshop</h2>
 <table style="border-collapse:collapse;width:100%;font-family:sans-serif;font-size:14px">
@@ -71,7 +74,7 @@ export default async function handler(req, res) {
   <tr><td style="padding:8px;font-weight:bold">Notes</td><td style="padding:8px">${data.notes || '—'}</td></tr>
   <tr><td style="padding:8px;background:#fff3e0;font-weight:bold">Submitted</td><td style="padding:8px;background:#fff3e0">${new Date().toLocaleString('en-US',{timeZone:'America/New_York'})}</td></tr>
 </table>
-<p style="margin-top:16px;font-size:12px;color:#666">Booking ID: ${bookingId || 'pending'} | View all bookings in your <a href="https://zagaprime.com/admin">Admin Dashboard</a></p>
+<p style="margin-top:16px;font-size:12px;color:#666">Booking ID: ${bookingId || 'pending'} | View all bookings in your <a href="${adminUrl}">Admin Dashboard</a></p>
     `.trim();
 
     try {
@@ -79,8 +82,8 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${resendKey}` },
         body: JSON.stringify({
-          from: 'ZagaPrime Workshop <noreply@zagaprime.com>',
-          to: ['kzee@zagaprime.com'],
+          from: fromAddress,
+          to: [toAddress],
           reply_to: data.email,
           subject: `🗓 New Discovery Call: ${data.first_name} ${data.last_name} — ${data.commitment || 'New Lead'}`,
           html: emailBody
