@@ -62,7 +62,7 @@ export default async function handler(req, res) {
   if (resendKey) {
     const aiNeedsList = Array.isArray(data.aiNeeds) ? data.aiNeeds.join(', ') : '';
     const fromAddress = process.env.RESEND_FROM || 'ZagaPrime Workshop <noreply@zagaprimeai.com>';
-    const toAddress = process.env.BOOKING_NOTIFICATION_EMAIL || 'zagaprime@gmail.com';
+    const toAddress = process.env.BOOKING_NOTIFICATION_EMAIL || 'kzee@zagaprime.com';
     const adminUrl = process.env.ADMIN_DASHBOARD_URL || 'https://workshop-three-iota.vercel.app/admin';
     const emailBody = `
 <h2 style="color:#C4622D">New Discovery Call Booking — ZagaPrime Workshop</h2>
