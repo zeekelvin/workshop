@@ -2338,9 +2338,9 @@
       track: '/api/track',
     };
 
-    // June 20, 2026 at midnight Eastern time.
+    // Count through June 20, 2026 in Eastern time.
     (function () {
-      const launchDate = new Date('2026-06-20T00:00:00-04:00').getTime();
+      const launchDate = new Date('2026-06-20T23:59:59-04:00').getTime();
       const units = {
         days: document.getElementById('countdown-days'),
         hours: document.getElementById('countdown-hours'),
