@@ -101,7 +101,7 @@
       color: var(--cream)
     }
 
-    .nav-cta {
+    .nav-links a.nav-cta {
       background: var(--terra);
       color: var(--espresso);
       padding: .85rem 1.6rem;
@@ -116,7 +116,7 @@
       transition: background .2s, color .2s, transform .2s
     }
 
-    .nav-cta:hover {
+    .nav-links a.nav-cta:hover {
       background: var(--terra-light);
       color: var(--espresso);
       transform: translateY(-1px)
@@ -164,12 +164,25 @@
       min-width: 0
     }
 
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      width: 100%;
+      max-width: 520px;
+      margin-left: auto
+    }
+
+    .hero-visual .countdown {
+      width: 100%;
+      margin: 0
+    }
+
     .hero-portrait {
       position: relative;
       aspect-ratio: 1 / 1;
       width: 100%;
-      max-width: 520px;
-      margin-left: auto;
       border-radius: 4px;
       overflow: hidden;
       border: 1px solid rgba(240, 208, 128, 0.18);
@@ -197,7 +210,7 @@
         gap: 3rem
       }
 
-      .hero-portrait {
+      .hero-visual {
         margin: 0 auto;
         max-width: 380px
       }
@@ -272,6 +285,50 @@
       gap: 1rem;
       flex-wrap: wrap;
       margin-bottom: 3rem
+    }
+
+    .countdown {
+      display: inline-flex;
+      flex-direction: column;
+      gap: .85rem;
+      margin: 0 0 2.5rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(201, 168, 76, .45);
+      background: rgba(26, 26, 26, .72);
+      backdrop-filter: blur(10px)
+    }
+
+    .countdown-label {
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(64px, 1fr));
+      gap: .75rem
+    }
+
+    .countdown-unit {
+      min-width: 0
+    }
+
+    .countdown-value {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      color: var(--cream);
+      line-height: 1
+    }
+
+    .countdown-name {
+      margin-top: .25rem;
+      color: var(--cream-dim);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase
     }
 
     .btn-primary {
@@ -1422,6 +1479,14 @@
       .hero-stats {
         gap: 1.5rem
       }
+
+      .countdown {
+        width: 100%
+      }
+
+      .countdown-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
     }
   </style>
 </head>
@@ -1475,8 +1540,31 @@
           </div>
         </div>
       </div>
-      <div class="hero-portrait">
-        <img src="/hero-portrait.jpg" alt="ZagaPrime founder" loading="eager" />
+      <div class="hero-visual">
+        <div class="countdown" aria-live="polite">
+          <div class="countdown-label">June 20 launch countdown</div>
+          <div class="countdown-grid">
+            <div class="countdown-unit">
+              <div class="countdown-value" id="countdown-days">--</div>
+              <div class="countdown-name">Days</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-value" id="countdown-hours">--</div>
+              <div class="countdown-name">Hours</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-value" id="countdown-minutes">--</div>
+              <div class="countdown-name">Minutes</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-value" id="countdown-seconds">--</div>
+              <div class="countdown-name">Seconds</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-portrait">
+          <img src="/hero-portrait.jpg" alt="ZagaPrime founder" loading="eager" />
+        </div>
       </div>
     </div>
   </section>
@@ -2237,6 +2325,39 @@
       booking: '/api/booking',
       track: '/api/track',
     };
+
+    // June 20, 2026 at midnight Eastern time.
+    (function () {
+      const launchDate = new Date('2026-06-20T00:00:00-04:00').getTime();
+      const units = {
+        days: document.getElementById('countdown-days'),
+        hours: document.getElementById('countdown-hours'),
+        minutes: document.getElementById('countdown-minutes'),
+        seconds: document.getElementById('countdown-seconds')
+      };
+
+      function pad(value) {
+        return String(value).padStart(2, '0');
+      }
+
+      function updateCountdown() {
+        const remaining = Math.max(0, launchDate - Date.now());
+        const days = Math.floor(remaining / 86400000);
+        const hours = Math.floor((remaining % 86400000) / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+
+        units.days.textContent = days;
+        units.hours.textContent = pad(hours);
+        units.minutes.textContent = pad(minutes);
+        units.seconds.textContent = pad(seconds);
+      }
+
+      if (Object.values(units).every(Boolean)) {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+    })();
 
     // ── PAGE VIEW TRACKING ───────────────────────────────────────────────────────
     (function () {
