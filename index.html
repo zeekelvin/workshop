@@ -67,7 +67,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(26, 15, 10, 0.92);
+      background: rgba(12, 12, 12, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border)
     }
@@ -104,18 +104,22 @@
     .nav-cta {
       background: var(--terra);
       color: var(--espresso);
-      padding: .6rem 1.4rem;
+      padding: .85rem 1.6rem;
       border-radius: 2px;
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: .95rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      transition: background .2s, color .2s
+      letter-spacing: .04em;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: background .2s, color .2s, transform .2s
     }
 
     .nav-cta:hover {
       background: var(--terra-light);
-      color: var(--espresso)
+      color: var(--espresso);
+      transform: translateY(-1px)
     }
 
     /* HERO */
@@ -132,7 +136,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 60% 30%, rgba(196, 98, 45, 0.12) 0%, transparent 70%)
+      background: radial-gradient(ellipse 80% 60% at 60% 30%, rgba(201, 168, 76, 0.12) 0%, transparent 70%)
     }
 
     .hero::after {
@@ -145,11 +149,58 @@
     }
 
     .hero-inner {
-      max-width: 1100px;
+      max-width: 1280px;
       margin: 0 auto;
       width: 100%;
       position: relative;
-      z-index: 1
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 4rem;
+      align-items: center
+    }
+
+    .hero-content {
+      min-width: 0
+    }
+
+    .hero-portrait {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 520px;
+      margin-left: auto;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(240, 208, 128, 0.18);
+      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(201, 168, 76, 0.08)
+    }
+
+    .hero-portrait::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(12, 12, 12, 0.45) 100%);
+      pointer-events: none
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem
+      }
+
+      .hero-portrait {
+        margin: 0 auto;
+        max-width: 380px
+      }
     }
 
     .hero-eyebrow {
@@ -225,11 +276,11 @@
 
     .btn-primary {
       background: var(--terra);
-      color: #fff;
+      color: var(--espresso);
       padding: .85rem 2rem;
       border-radius: 2px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: .95rem;
       letter-spacing: .04em;
       display: inline-flex;
@@ -242,6 +293,7 @@
 
     .btn-primary:hover {
       background: var(--terra-light);
+      color: var(--espresso);
       transform: translateY(-1px)
     }
 
@@ -1393,34 +1445,39 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-inner">
-      <div class="hero-eyebrow">
-        <div class="dot"></div>
-        <span>ZagaPrime AI Power Workshop Series</span>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="dot"></div>
+          <span>ZagaPrime AI Power Workshop Series</span>
+        </div>
+        <h1>Stop Watching.<br />Start <em>Building.</em><br />Your AI Era Starts Now.</h1>
+        <p class="hero-sub">3 hands-on sessions that turn your skill, niche, or idea into an AI-powered brand — with real
+          content, a faceless avatar, and digital products that earn while you sleep.</p>
+        <div class="hero-ctas">
+          <a href="#discovery" class="btn-primary">🗓 Book Your Discovery Call</a>
+          <a href="#niche-gen" class="btn-secondary">✦ Find My Niche →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Hands-On Sessions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2.5h</div>
+            <div class="stat-label">Per Session</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10</div>
+            <div class="stat-label">Max Participants</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Real Results</div>
+          </div>
+        </div>
       </div>
-      <h1>Stop Watching.<br />Start <em>Building.</em><br />Your AI Era Starts Now.</h1>
-      <p class="hero-sub">3 hands-on sessions that turn your skill, niche, or idea into an AI-powered brand — with real
-        content, a faceless avatar, and digital products that earn while you sleep.</p>
-      <div class="hero-ctas">
-        <a href="#discovery" class="btn-primary">🗓 Book Your Discovery Call</a>
-        <a href="#niche-gen" class="btn-secondary">✦ Find My Niche →</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Hands-On Sessions</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">2.5h</div>
-          <div class="stat-label">Per Session</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">10</div>
-          <div class="stat-label">Max Participants</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">∞</div>
-          <div class="stat-label">Real Results</div>
-        </div>
+      <div class="hero-portrait">
+        <img src="/hero-portrait.jpg" alt="ZagaPrime founder" loading="eager" />
       </div>
     </div>
   </section>
